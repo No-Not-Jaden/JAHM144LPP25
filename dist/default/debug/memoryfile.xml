@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <project>
-  <executable name="dist/default/debug/BNO085.X.debug.elf">
+  <executable name="dist/default/debug/JAHM144LPP25.X.debug.elf">
     <memory name="data">
       <units>bytes</units>
       <length>8192</length>
-      <used>1962</used>
-      <free>6230</free>
+      <used>1968</used>
+      <free>6224</free>
     </memory>
     <memory name="program">
       <units>bytes</units>
       <length>65274</length>
-      <used>3903</used>
-      <free>61371</free>
+      <used>5259</used>
+      <free>60015</free>
     </memory>
   </executable>
 </project>

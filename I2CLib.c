@@ -58,8 +58,11 @@ void register_event(uint8_t i2cAddress, unsigned long functionAddress) {
 void initiateTransmission() {
     stage = ENABLING;
     I2C1CONbits.SEN = 1;
-    
-    
+}
+
+void stopTransmission() {
+    stage = DISABLING;
+    I2C1CONbits.PEN = 1;
 }
 
 // Get a free Transmission slot
@@ -137,8 +140,9 @@ void transmitNextData() {
 void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
     _MI2C1IF = 0; // clear interrupt
     I2C1CON;
+    I2C1STAT;
     
-    if (stage == ENABLING && I2C1STATbits.S) {
+    if (stage == ENABLING && I2C1CONbits.SEN == 0) {
         // Start bit was just sent
         loadNextTransmission();
         // write address
@@ -148,10 +152,6 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
         // reading data
         if (I2C1STATbits.RBF == 1) {
             // receive byte is full - data is ready to be read
-            // generate master acknowledge
-            I2C1CONbits.ACKDT = 0;
-            I2C1CONbits.ACKEN = 1;
-
             curDataIndex++;
 
             // read from the I2CxRCV register
@@ -165,15 +165,25 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
                     activeTransmission->data_size += f(data, activeTransmission->data_size - curDataIndex);
                 }
             }
+            
+            
+            // generate master acknowledge
+            if (activeTransmission->data_size == curDataIndex) {
+                // NACK - last byte in receive has to be this
+                I2C1CONbits.ACKDT = 1;
+            } else {
+                // ACK
+                I2C1CONbits.ACKDT = 0;
+            }
+            I2C1CONbits.ACKEN = 1; // send ACKDT
 
         } else if (activeTransmission->data_size == curDataIndex) {
             // no more data to receive
-            stage = DISABLING;
-            I2C1CONbits.PEN = 1;   // Initiate STOP condition
+            stopTransmission();
         } else {
             I2C1CONbits.RCEN = 1; // enable receive
         }
-    } else if (stage == DISABLING && I2C1STATbits.P) {
+    } else if (stage == DISABLING && I2C1CONbits.PEN == 0) {
         if (loadNextTransmission()) {
             // more data to be sent
             initiateTransmission();
@@ -196,14 +206,16 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
                 }
                 stage = DATA;
             } else if (stage == DATA) {
-                if (activeTransmission->data_size > 0) {
+                if (activeTransmission->data_size > curDataIndex) {
                     transmitNextData();
+                } else {
+                    // no more data to send
+                    stopTransmission();
                 }
             }
         } else {
             // not acknowledged
-            stage = DISABLING;
-            I2C1CONbits.PEN = 1;   // Initiate STOP condition
+            stopTransmission();
         }
     }
 }
