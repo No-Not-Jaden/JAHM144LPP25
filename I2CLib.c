@@ -107,7 +107,9 @@ int loadNextTransmission() {
 void transmit_packet(uint8_t address_RW, uint8_t data[], int data_size) {
     
     // create a struct pointer to add to the queue
-    Transmission* transmissionPtr = allocate_transmission();
+    Transmission* transmissionPtr = NULL;
+    while (transmissionPtr == NULL)
+            transmissionPtr = allocate_transmission();
     transmissionPtr->address_RW = address_RW;
     if (address_RW | 0b0) {
         // transfer data over to be written
@@ -184,7 +186,7 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
             I2C1CONbits.RCEN = 1; // enable receive
         }
     } else if (stage == DISABLING && I2C1CONbits.PEN == 0) {
-        if (loadNextTransmission()) {
+        if (getQueueSize() > 0) {
             // more data to be sent
             initiateTransmission();
         } else {

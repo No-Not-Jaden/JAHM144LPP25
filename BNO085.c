@@ -52,7 +52,7 @@ void __attribute__((__interrupt__,__auto_psv__)) _INT0Interrupt(void)
 
 volatile uint8_t buffer[512];
 volatile int numBytes = 0;
-volatile Vector3d gravityVector;
+volatile GravityVector gravityVector;
 volatile uint8_t bnoControlChannel = 0xFF;     // Will be set to channel ID of "control"
 volatile uint8_t bnoInputChannel = 0xFF;       // Will be set to channel ID of "inputNormal"
 volatile uint8_t bnoDeviceChannel = 0xFF;      // Will be set to channel ID of "device"
@@ -121,8 +121,12 @@ int findSH2App(const char* appName) {
     return index;
 }
 
-// Get next channel
-// Returns channel name, or null if none left in this app
+/* Get the next SH-2 channel in the buffer
+ * @param *channelNum   Address of a variable to set the channel number to.  
+ * @param *index        Address of the index of where to start in the buffer.
+ *                      This will be updated to the end of the next channel.
+ * Returns channel name, or null if none left in the buffer.
+ */
 char* readNextChannel(uint8_t* channelNum, int* index){
     char* channelName = NULL;
     if (buffer[*index] == 0x08)
@@ -147,8 +151,11 @@ char* readNextChannel(uint8_t* channelNum, int* index){
     return channelName;
 }
 
-// https://www.ceva-ip.com/wp-content/uploads/SH-2-SHTP-Reference-Manual.pdf
+/* Reads the SH-2 SHTP advertisement and saves desired channels to global variables
+ * https://www.ceva-ip.com/wp-content/uploads/SH-2-SHTP-Reference-Manual.pdf
+ */
 int readAdvertisement() {
+    // find sensorhub app for control and inputNormal channels
     int index = findSH2App("sensorhub\0");
     if (index == -1) {
         // app not found
@@ -165,6 +172,7 @@ int readAdvertisement() {
         nextChannelName = readNextChannel(&nextChannelNumber, &index);
     }
     
+    // find executable app for device channel
     index = findSH2App("executable\0");
     if (index == -1) {
         // app not found
@@ -204,10 +212,10 @@ void processMessage() {
         // 7.2.1 Base Timestamp Reference (Page 93)
         uint8_t reportID = buffer[4]; // 0xFB for base timestamp
         int index = 5;
+        long baseDelta = 0;
         if (reportID == 0xFB) {
            // relative to transport-defined reference point. Signed. Units are 100 microsecond ticks
-           // TODO: record this value somewhere
-           long baseDelta = (long) buffer[index++];
+           baseDelta = (long) buffer[index++];
            baseDelta |= (long) buffer[index++] << 8;
            baseDelta |= (long) buffer[index++] << 16;
            baseDelta |= (long) buffer[index++] << 24;
@@ -228,9 +236,21 @@ void processMessage() {
             rawZ |= (unsigned int) buffer[index++] << 8;
 
             // converts to floating point
-            gravityVector.x = ((int) rawX) * Q14_SCALE;
-            gravityVector.y = ((int) rawY) * Q14_SCALE;
-            gravityVector.z = ((int) rawZ) * Q14_SCALE;
+            if (gravityVector.average_count == 0) {
+                // have not stored anything here yet
+                gravityVector.x = ((int) rawX) * Q14_SCALE;
+                gravityVector.y = ((int) rawY) * Q14_SCALE;
+                gravityVector.z = ((int) rawZ) * Q14_SCALE;
+            } else {
+                // merge with previous values
+                float prevMultiplier = gravityVector.average_count / (gravityVector.average_count + 1.0f);
+                float curMultiplier = 1 / (gravityVector.average_count + 1.0f);
+                gravityVector.x = prevMultiplier * gravityVector.x + curMultiplier * (((int) rawX) * Q14_SCALE);
+                gravityVector.y = prevMultiplier * gravityVector.y + curMultiplier * (((int) rawY) * Q14_SCALE);
+                gravityVector.z = prevMultiplier * gravityVector.z + curMultiplier * (((int) rawZ) * Q14_SCALE);
+            }
+            gravityVector.deltaTime += baseDelta;
+            gravityVector.average_count++;
         }
     }
     
@@ -242,10 +262,16 @@ void processMessage() {
     numBytes = 0;
 }
 
-void getGravityVector(Vector3d* out) {
+void getGravityVector(GravityVector* out) {
+    // copy over gravity vector values
     out->x = gravityVector.x;
     out->y = gravityVector.y;
     out->z = gravityVector.z;
+    out->deltaTime = gravityVector.deltaTime;
+    out->average_count = gravityVector.average_count;
+    // reset vector
+    gravityVector.deltaTime = 0;
+    gravityVector.average_count = 0;
 }
 
 

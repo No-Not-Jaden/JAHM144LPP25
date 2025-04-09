@@ -16,10 +16,12 @@ extern "C" {
         float x;
         float y;
         float z;
-    } Vector3d;
+        unsigned long deltaTime;    // total time this object encompasses
+        unsigned int average_count; // how many averages in this object
+    } GravityVector;
 
 void bno085_init();
-void getGravityVector(Vector3d* out);
+void getGravityVector(GravityVector* out);
 
 
 #ifdef	__cplusplus

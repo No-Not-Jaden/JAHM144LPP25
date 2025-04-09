@@ -7,6 +7,8 @@
 
 
 #include "xc.h"
+#include "BNO085.h"
+#include "I2CLib.h"
 
 
 // CW1: FLASH CONFIGURATION WORD 1 (see PIC24 Family Reference Manual 24.1)
