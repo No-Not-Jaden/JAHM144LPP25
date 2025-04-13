@@ -28,18 +28,21 @@ extern "C" {
     void register_event(uint8_t i2cAddress, unsigned long address);
     
    /* Send or receive data through I2C. This function sends the following on I2C:
-    * Start >> (address_RW) >> 
+    * Read bit is one:
+    * Start >> (address_RW) >> (read read_bytes number of bytes) >> Stop
+    * Read bit is zero (write):
+    * Start >> (address_RW) >> (data[0] -> data[dataW_size-1]) >> Stop
     * 
     * @param address_RW    The least significant bit is for read / not write, and 
     *                      the 7 most significant bits are for the address.
     * @param data[]        The data to be sent. Use 0 for this parameter if reading.
     * @param data_size     The size of the data to be sent or received. This can be
-    *                      modified later by returning a value from a receive event.
+    *                      modified later by returning a value from a receive event if reading.
     */
    void transmit_packet(uint8_t address_RW, uint8_t data[], unsigned int data_size);
    
    /* Read data through I2C. This function sends the following on I2C:
-    * Start >> (address + write) >> (dataW[0] -> dataW[dataW_size-1]) >> Repeated Start >> (dataR[0] -> dataR[dataR_size-1] >> Stop
+    * Start >> (address + write) >> (data[0] -> data[dataW_size-1]) >> Repeated Start >> (read read_bytes number of bytes) >> Stop
     * If data_size is 0, transmit_packet((address << 1) | 0b1, 0, read_bytes) is used
     * If read_bytes is 0, transmit_packet(address << 1, data, data_size) is used
     * 
