@@ -22,6 +22,7 @@ extern "C" {
         uint8_t address_RW; // address + R/nW bit
         uint8_t data[MAX_DATA_SIZE];      // the data to be sent, or a null ptr if reading
         unsigned int data_size;      // the number of bytes to be written or read
+        unsigned int read_bytes;
     } Transmission;
     
     int enqueue(Transmission*);

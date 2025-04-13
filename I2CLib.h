@@ -27,14 +27,29 @@ extern "C" {
     */
     void register_event(uint8_t i2cAddress, unsigned long address);
     
-    /* Send or receive data through I2C
-     * 
+   /* Send or receive data through I2C. This function sends the following on I2C:
+    * Start >> (address_RW) >> 
+    * 
     * @param address_RW    The least significant bit is for read / not write, and 
     *                      the 7 most significant bits are for the address.
     * @param data[]        The data to be sent. Use 0 for this parameter if reading.
-    * @param data_size     The size of the data to be sent or received.
+    * @param data_size     The size of the data to be sent or received. This can be
+    *                      modified later by returning a value from a receive event.
     */
-   void transmit_packet(uint8_t address_RW, uint8_t data[], int data_size);
+   void transmit_packet(uint8_t address_RW, uint8_t data[], unsigned int data_size);
+   
+   /* Read data through I2C. This function sends the following on I2C:
+    * Start >> (address + write) >> (dataW[0] -> dataW[dataW_size-1]) >> Repeated Start >> (dataR[0] -> dataR[dataR_size-1] >> Stop
+    * If data_size is 0, transmit_packet((address << 1) | 0b1, 0, read_bytes) is used
+    * If read_bytes is 0, transmit_packet(address << 1, data, data_size) is used
+    * 
+    * @param address        The address of the device to read from.
+    * @param data[]         The data to be written to the device (e.g. Register address to read from).
+    * @param data_size      The size of the data to be written.
+    * @param read_bytes     The number of bytes to be read. This can be modified later
+    *                       by returning a value from a receive event.
+    */
+   void transceive_packet(uint8_t address, uint8_t data[], unsigned int data_size, unsigned int read_bytes);
 
 
 #ifdef	__cplusplus

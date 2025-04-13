@@ -105,22 +105,49 @@ int loadNextTransmission() {
  * @param data_size     The size of the data to be sent or received.
  */
 void transmit_packet(uint8_t address_RW, uint8_t data[], int data_size) {
+    if (address_RW & 0b1) {
+        // reading
+        transceive_packet(address_RW >> 1, data, 0, data_size);
+    } else {
+        // writing
+        transceive_packet(address_RW >> 1, data, data_size, 0);
+    }
+}
+
+/* Read data through I2C. This function sends the following on I2C:
+* Start >> (address + write) >> (dataW[0] -> dataW[dataW_size-1]) >> Repeated Start >> (dataR[0] -> dataR[dataR_size-1] >> Stop
+* 
+* @param address        The address of the device to read from.
+* @param data[]         The data to be written to the device (e.g. Register address to read from).
+* @param data_size      The size of the data to be written.
+* @param read_bytes     The number of bytes to be read. This can be modified later
+*                       by returning a value from a receive event.
+*/
+void transceive_packet(uint8_t address, uint8_t data[], unsigned int data_size, unsigned int read_bytes) {
     
     // create a struct pointer to add to the queue
     Transmission* transmissionPtr = NULL;
     while (transmissionPtr == NULL)
             transmissionPtr = allocate_transmission();
-    transmissionPtr->address_RW = address_RW;
-    if (address_RW | 0b0) {
-        // transfer data over to be written
-        for (int i = 0; i < data_size && i < MAX_DATA_SIZE; i++) {
-            transmissionPtr->data[i] = data[i];
-        }
-    }
+    
+    // transfer data size to pointer
     if (data_size < MAX_DATA_SIZE) {
         transmissionPtr->data_size = data_size;
     } else {
         transmissionPtr->data_size = MAX_DATA_SIZE;
+    }
+    transmissionPtr->read_bytes = read_bytes;
+    
+    // check if it is reading or writing
+    if (data_size > 0) {
+        // writing data, transfer bytes over
+        transmissionPtr->address_RW = address << 0;
+        for (int i = 0; i < data_size && i < MAX_DATA_SIZE; i++) {
+            transmissionPtr->data[i] = data[i];
+        }
+    } else {
+        // reading data
+        transmissionPtr->address_RW = (address << 0) | 0b1 ;
     }
     
     while (enqueue(transmissionPtr) == 0);
@@ -128,7 +155,6 @@ void transmit_packet(uint8_t address_RW, uint8_t data[], int data_size) {
     if (stage == NONE) {
         initiateTransmission();
     }
-    
 }
 
 // transmit the next data that is needed to be sent
@@ -150,11 +176,23 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
         // write address
         I2C1TRN = activeTransmission->address_RW;
         stage = WRITE_ADDRESS;
-    } else if (stage == DATA && activeTransmission->address_RW & 0b1) {
-        // reading data
-        if (I2C1STATbits.RBF == 1) {
+    } else if (stage == DATA && curDataIndex >= activeTransmission->data_size) {
+        // In the read section of the data transfer, if there is no data to be read, transfer stops.
+        // The index of the data being read is curDataIndex - data_size - 1
+        //         write           read
+        // size: [data_size][1][read_bytes]
+        if (curDataIndex == activeTransmission->data_size) {
+            if (activeTransmission->read_bytes > 0) {
+                // just started reading - set RSEN
+                curDataIndex++;
+                I2C1CONbits.RSEN = 0;
+            } else {
+                // nothing to read
+                stopTransmission();
+            }
+        } else if (I2C1STATbits.RBF == 1) {
             // receive byte is full - data is ready to be read
-            curDataIndex++;
+            curDataIndex++; 
 
             // read from the I2CxRCV register
             uint8_t data = I2C1RCV;
@@ -164,13 +202,13 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
             for (int i = 0; i < numEvents; i++) {
                 if (i2cAddresses[i] == activeAddress) {
                     receiveEvent* f = (receiveEvent*) eventAddresses[i];
-                    activeTransmission->data_size += f(data, activeTransmission->data_size - curDataIndex);
+                    activeTransmission->read_bytes += f(data, activeTransmission->read_bytes + activeTransmission->data_size - curDataIndex + 1);
                 }
             }
             
             
             // generate master acknowledge
-            if (activeTransmission->data_size == curDataIndex) {
+            if (activeTransmission->read_bytes + activeTransmission->data_size < curDataIndex) {
                 // NACK - last byte in receive has to be this
                 I2C1CONbits.ACKDT = 1;
             } else {
@@ -179,7 +217,7 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
             }
             I2C1CONbits.ACKEN = 1; // send ACKDT
 
-        } else if (activeTransmission->data_size == curDataIndex) {
+        } else if (activeTransmission->read_bytes + activeTransmission->data_size < curDataIndex) {
             // no more data to receive
             stopTransmission();
         } else {
@@ -208,12 +246,8 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
                 }
                 stage = DATA;
             } else if (stage == DATA) {
-                if (activeTransmission->data_size > curDataIndex) {
-                    transmitNextData();
-                } else {
-                    // no more data to send
-                    stopTransmission();
-                }
+                // assert(activeTransmission->data_size > curDataIndex)
+                transmitNextData();
             }
         } else {
             // not acknowledged
