@@ -24,6 +24,8 @@ volatile Transmission* activeTransmission = NULL;
 // The current data byte that is being sent/received
 volatile unsigned int curDataIndex = 0; 
 
+uint8_t initialized = 0;
+
 // The current I2C transmission stage
 enum TransmissionStage {
     NONE, ENABLING, WRITE_ADDRESS, DATA, DISABLING
@@ -104,7 +106,7 @@ int loadNextTransmission() {
  * @param data[]        The data to be sent. Use 0 for this parameter if reading.
  * @param data_size     The size of the data to be sent or received.
  */
-void transmit_packet(uint8_t address_RW, uint8_t data[], int data_size) {
+void transmit_packet(uint8_t address_RW, uint8_t data[], unsigned int data_size) {
     if (address_RW & 0b1) {
         // reading
         transceive_packet(address_RW >> 1, data, 0, data_size);
@@ -141,13 +143,13 @@ void transceive_packet(uint8_t address, uint8_t data[], unsigned int data_size, 
     // check if it is reading or writing
     if (data_size > 0) {
         // writing data, transfer bytes over
-        transmissionPtr->address_RW = address << 0;
+        transmissionPtr->address_RW = address << 1;
         for (int i = 0; i < data_size && i < MAX_DATA_SIZE; i++) {
             transmissionPtr->data[i] = data[i];
         }
     } else {
         // reading data
-        transmissionPtr->address_RW = (address << 0) | 0b1 ;
+        transmissionPtr->address_RW = (address << 1) | 0b1 ;
     }
     
     while (enqueue(transmissionPtr) == 0);
@@ -178,18 +180,22 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
         stage = WRITE_ADDRESS;
     } else if (stage == DATA && curDataIndex >= activeTransmission->data_size) {
         // In the read section of the data transfer, if there is no data to be read, transfer stops.
-        // The index of the data being read is curDataIndex - data_size - 1
+        // The index of the data being read is curDataIndex - data_size - 2
         //         write           read
-        // size: [data_size][1][read_bytes]
+        // size: [data_size][2][read_bytes]
         if (curDataIndex == activeTransmission->data_size) {
             if (activeTransmission->read_bytes > 0) {
                 // just started reading - set RSEN
                 curDataIndex++;
-                I2C1CONbits.RSEN = 0;
+                I2C1CONbits.RSEN = 1;
             } else {
                 // nothing to read
                 stopTransmission();
             }
+        } else if (curDataIndex == activeTransmission->data_size + 1) {
+            // 2nd flag set after reading - send address
+            curDataIndex++;
+            I2C1TRN = activeTransmission->address_RW | 0b1;
         } else if (I2C1STATbits.RBF == 1) {
             // receive byte is full - data is ready to be read
             curDataIndex++; 
@@ -202,13 +208,13 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
             for (int i = 0; i < numEvents; i++) {
                 if (i2cAddresses[i] == activeAddress) {
                     receiveEvent* f = (receiveEvent*) eventAddresses[i];
-                    activeTransmission->read_bytes += f(data, activeTransmission->read_bytes + activeTransmission->data_size - curDataIndex + 1);
+                    activeTransmission->read_bytes += f(data, activeTransmission->read_bytes + activeTransmission->data_size + 2 - curDataIndex);
                 }
             }
             
             
             // generate master acknowledge
-            if (activeTransmission->read_bytes + activeTransmission->data_size < curDataIndex) {
+            if (activeTransmission->read_bytes + activeTransmission->data_size < curDataIndex - 1) {
                 // NACK - last byte in receive has to be this
                 I2C1CONbits.ACKDT = 1;
             } else {
@@ -217,7 +223,7 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
             }
             I2C1CONbits.ACKEN = 1; // send ACKDT
 
-        } else if (activeTransmission->read_bytes + activeTransmission->data_size < curDataIndex) {
+        } else if (activeTransmission->read_bytes + activeTransmission->data_size < curDataIndex - 1) {
             // no more data to receive
             stopTransmission();
         } else {
@@ -258,7 +264,9 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
 
 // Initialize the I2C1 peripheral with 100k Hz baudrate
 void init_i2c() {
-    
+    if (initialized)
+        return;
+         
     // I2C initialization
     I2C1CON = 0;
     I2C1CONbits.SCLREL = 1; // Clock holding
@@ -268,5 +276,6 @@ void init_i2c() {
     _MI2C1IP = 6;           // higher interrupt priority
     I2C1CONbits.I2CEN = 1;  // enable
     
+    initialized = 1;
 }
 
