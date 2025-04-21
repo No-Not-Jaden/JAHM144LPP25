@@ -11,6 +11,12 @@
 #ifdef	__cplusplus
 extern "C" {
 #endif
+    
+    typedef struct {
+        uint8_t brightness;     // brighness of the LED
+        float vx, vy;           // velocity of the LED
+        float rx, ry;           // 
+    } LED;
 
     /* Initialize the pixel data with some pixels lit.
      * 

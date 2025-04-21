@@ -10,6 +10,7 @@
 #include "BNO085.h"
 #include "lcd.h"
 #include "I2CLib.h"
+#include <math.h>
 
 
 // CW1: FLASH CONFIGURATION WORD 1 (see PIC24 Family Reference Manual 24.1)
@@ -28,6 +29,8 @@
                                        // Fail-Safe Clock Monitor is enabled)
 #pragma config FNOSC = FRCPLL      // Oscillator Select (Fast RC Oscillator with PLL module (FRCPLL))
 
+GravityVector vector;
+void normalize(GravityVector* vector);
 
 void setup() {
     CLKDIVbits.RCDIV = 0;
@@ -45,29 +48,54 @@ void setup() {
     bno085_init();
     delay(1000);
     lcd_init();
+    
 }
 
 int main(void) {
     setup();
     
-    GravityVector vector;
-    
     while (1) {
+        // get the gravity vector
         getGravityVector(&vector);
-        lcd_clear();
-        lcd_set_cursor(0,0);
-        if (vector.average_count == 0) {
-            lcd_write_string("No Data\0");
-        } else {
-            char str[20];
-            sprintf(str, "%2.1f %2.1f", vector.x, vector.y);
-            lcd_write_string(&str);
-            lcd_set_cursor(1,0);
-            char str2[20];
-            sprintf(str2, "%2.1f %d", vector.z, getTransmissionsUsed());
-            lcd_write_string(&str2);
-            delay(100);
-        }
+        // normalize it
+        normalize(&vector);
+        
+        
     }
     return 0;
+}
+
+// Normalizes the gravity vector
+void normalize(GravityVector* vector) {
+    float magnitude = sqrt(vector->x * vector->x + vector->y * vector->y + vector->z * vector->z);
+    vector->x = vector->x / magnitude;
+    vector->y = vector->y / magnitude;
+    vector->z = vector->z / magnitude;
+}
+
+// returns the X acceleration of the normalized gravity vector
+float getAccelerationX() {
+    return vector.x * 9.8f;
+}
+
+// returns the Y acceleration of the normalized gravity vector
+float getAccelerationY() {
+    return vector.y * 9.8f;
+}
+
+void displayGravityVector() {
+    lcd_clear();
+    lcd_set_cursor(0,0);
+    if (vector.average_count == 0) {
+        lcd_write_string("No Data\0");
+    } else {
+        char str[20];
+        sprintf(str, "%2.1f %2.1f", vector.x, vector.y);
+        lcd_write_string(&str);
+        lcd_set_cursor(1,0);
+        char str2[20];
+        sprintf(str2, "%2.1f %d", vector.z, getTransmissionsUsed());
+        lcd_write_string(&str2);
+        delay(100);
+    }
 }

@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=BNO085.c queue.c I2CLib.c core.c lcd.c
+SOURCEFILES_QUOTED_IF_SPACED=BNO085.c queue.c I2CLib.c core.c lcd.c PixelData.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/BNO085.o.d ${OBJECTDIR}/queue.o.d ${OBJECTDIR}/I2CLib.o.d ${OBJECTDIR}/core.o.d ${OBJECTDIR}/lcd.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/PixelData.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/BNO085.o.d ${OBJECTDIR}/queue.o.d ${OBJECTDIR}/I2CLib.o.d ${OBJECTDIR}/core.o.d ${OBJECTDIR}/lcd.o.d ${OBJECTDIR}/PixelData.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o
+OBJECTFILES=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/PixelData.o
 
 # Source Files
-SOURCEFILES=BNO085.c queue.c I2CLib.c core.c lcd.c
+SOURCEFILES=BNO085.c queue.c I2CLib.c core.c lcd.c PixelData.c
 
 
 
@@ -119,6 +119,12 @@ ${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/d13cf6426f8756d2e36ded
 	@${RM} ${OBJECTDIR}/lcd.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  lcd.c  -o ${OBJECTDIR}/lcd.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lcd.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/PixelData.o: PixelData.c  .generated_files/flags/default/be1f1387fc84c37a9474e1b92a1185c9c71d7497 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PixelData.o.d 
+	@${RM} ${OBJECTDIR}/PixelData.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  PixelData.c  -o ${OBJECTDIR}/PixelData.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/PixelData.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/BNO085.o: BNO085.c  .generated_files/flags/default/22addce9405c48d4df09131c8f5fe576e06e4477 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
@@ -149,6 +155,12 @@ ${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/cde92ef42e71e012007daf
 	@${RM} ${OBJECTDIR}/lcd.o.d 
 	@${RM} ${OBJECTDIR}/lcd.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  lcd.c  -o ${OBJECTDIR}/lcd.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lcd.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/PixelData.o: PixelData.c  .generated_files/flags/default/70368d61bde0e23163386d78dfb87f3683f2d813 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PixelData.o.d 
+	@${RM} ${OBJECTDIR}/PixelData.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  PixelData.c  -o ${OBJECTDIR}/PixelData.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/PixelData.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

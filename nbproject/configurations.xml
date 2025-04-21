@@ -29,8 +29,12 @@
       <itemPath>PixelData.h</itemPath>
       <itemPath>lcd.c</itemPath>
       <itemPath>lcd.h</itemPath>
+      <itemPath>PixelData.c</itemPath>
     </logicalFolder>
   </logicalFolder>
+  <sourceRootList>
+    <Elem>.</Elem>
+  </sourceRootList>
   <projectmakefile>Makefile</projectmakefile>
   <confs>
     <conf name="default" type="2">
