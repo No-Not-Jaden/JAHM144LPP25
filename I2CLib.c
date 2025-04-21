@@ -67,6 +67,16 @@ void stopTransmission() {
     I2C1CONbits.PEN = 1;
 }
 
+int getTransmissionsUsed() {
+    int count = 0;
+    for (int i = 0; i < MAX_DATA_SIZE + 2; i++) {
+        if (transmission_used[i]) {
+            count++;
+        }
+    }
+    return count;
+}
+
 // Get a free Transmission slot
 Transmission* allocate_transmission() {
     for (int i = 0; i < MAX_DATA_SIZE + 2; i++) {
@@ -183,6 +193,10 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
         // The index of the data being read is curDataIndex - data_size - 2
         //         write           read
         // size: [data_size][2][read_bytes]
+        if (curDataIndex == activeTransmission->data_size && curDataIndex == 0) {
+            // data size is 0, jump to reading data
+            curDataIndex+= 2;
+        }
         if (curDataIndex == activeTransmission->data_size) {
             if (activeTransmission->read_bytes > 0) {
                 // just started reading - set RSEN
@@ -236,7 +250,7 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
         } else {
             stage = NONE;
         }
-    } else if (_TRSTAT == 0) {
+    } else if (stage != NONE && _TRSTAT == 0) {
         if (_ACKSTAT == 0) {
             // send next transmission
             if (stage == WRITE_ADDRESS) {
@@ -260,6 +274,24 @@ void __attribute__((__interrupt__,__auto_psv__)) _MI2C1Interrupt(void) {
             stopTransmission();
         }
     }
+}
+
+void write_sync(uint8_t address, uint8_t data[], uint8_t size) {
+    while (stage == NONE);
+
+    I2C1CONbits.SEN = 1;
+    while (I2C1CONbits.SEN);
+    
+    I2C1TRN = address << 1;
+    while (_TRSTAT && _ACKSTAT);
+    
+    for (int i = 0; i < size; i++) {
+        I2C1TRN = data[i];
+        while (_TRSTAT && _ACKSTAT);
+    }
+    
+    I2C1CONbits.PEN = 1;
+    while (I2C1CONbits.PEN);
 }
 
 // Initialize the I2C1 peripheral with 100k Hz baudrate

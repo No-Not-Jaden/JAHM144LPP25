@@ -4,12 +4,12 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
             <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/BNO085.h</file>
-            <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/PixelData.h</file>
-            <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/core.c</file>
             <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/queue.h</file>
+            <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/core.c</file>
             <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/I2CLib.h</file>
+            <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/lcd.c</file>
             <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/queue.c</file>
-            <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/BNO085.c</file>
+            <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/lcd.h</file>
             <file>file:/C:/Users/jpate/Documents/EE/EE%202361/JAHM144LPP25.X/I2CLib.c</file>
         </group>
     </open-files>

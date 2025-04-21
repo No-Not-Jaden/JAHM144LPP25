@@ -80,6 +80,7 @@ void enable_gravity_vector(){
                     0x00, 0x00, 0x00, 0x00,  // Batch interval (disabled)
                     0x00, 0x00, 0x00, 0x00   // Sensor-specific config (default)
                   };
+    
     transmit_packet(BNO_ADDRESS << 1, data, 21);
 }
 

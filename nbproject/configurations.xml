@@ -27,6 +27,8 @@
       <itemPath>BNO085.h</itemPath>
       <itemPath>PositionCalculator.h</itemPath>
       <itemPath>PixelData.h</itemPath>
+      <itemPath>lcd.c</itemPath>
+      <itemPath>lcd.h</itemPath>
     </logicalFolder>
   </logicalFolder>
   <projectmakefile>Makefile</projectmakefile>

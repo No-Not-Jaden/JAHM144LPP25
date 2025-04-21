@@ -54,6 +54,17 @@ extern "C" {
     */
    void transceive_packet(uint8_t address, uint8_t data[], unsigned int data_size, unsigned int read_bytes);
 
+   /* Send a write command synchronously through I2C. 
+    * This will halt all processing until the transmission is complete
+    * 
+    * @param address        The address of the device to write to.
+    * @param data[]         The data to be written to the device.
+    * @param size           The number of bytes to be written. (size of data)
+    */
+   void write_sync(uint8_t address, uint8_t data[], uint8_t size);
+   
+   // Get the number of transmissions currently queued.
+   int getTransmissionsUsed();
 
 #ifdef	__cplusplus
 }

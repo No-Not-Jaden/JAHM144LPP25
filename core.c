@@ -8,6 +8,7 @@
 
 #include "xc.h"
 #include "BNO085.h"
+#include "lcd.h"
 #include "I2CLib.h"
 
 
@@ -31,25 +32,42 @@
 void setup() {
     CLKDIVbits.RCDIV = 0;
     
-    // Power control - This is so we can reset the devices when the PIC resets
+    // Power control - This is so we can power cycle the devices when the PIC resets
     TRISBbits.TRISB15 = 0; // make RB15 an output
     AD1PCFGbits.PCFG9 = 1; // make RB15 digital
     LATBbits.LATB15 = 0; // disable power to the device
     
     // short delay
-    for (int i = 0; i < 1000; i++) {
-        asm("nop");
-    }
+    delay(50);
     LATBbits.LATB15 = 1; // enable power to the device
     
     init_i2c();
     bno085_init();
+    delay(1000);
+    lcd_init();
 }
 
 int main(void) {
     setup();
+    
+    GravityVector vector;
+    
     while (1) {
-        asm("nop");
+        getGravityVector(&vector);
+        lcd_clear();
+        lcd_set_cursor(0,0);
+        if (vector.average_count == 0) {
+            lcd_write_string("No Data\0");
+        } else {
+            char str[20];
+            sprintf(str, "%2.1f %2.1f", vector.x, vector.y);
+            lcd_write_string(&str);
+            lcd_set_cursor(1,0);
+            char str2[20];
+            sprintf(str2, "%2.1f %d", vector.z, getTransmissionsUsed());
+            lcd_write_string(&str2);
+            delay(100);
+        }
     }
     return 0;
 }

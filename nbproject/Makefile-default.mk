@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=BNO085.c queue.c I2CLib.c core.c
+SOURCEFILES_QUOTED_IF_SPACED=BNO085.c queue.c I2CLib.c core.c lcd.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/BNO085.o.d ${OBJECTDIR}/queue.o.d ${OBJECTDIR}/I2CLib.o.d ${OBJECTDIR}/core.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/BNO085.o.d ${OBJECTDIR}/queue.o.d ${OBJECTDIR}/I2CLib.o.d ${OBJECTDIR}/core.o.d ${OBJECTDIR}/lcd.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o
+OBJECTFILES=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o
 
 # Source Files
-SOURCEFILES=BNO085.c queue.c I2CLib.c core.c
+SOURCEFILES=BNO085.c queue.c I2CLib.c core.c lcd.c
 
 
 
@@ -113,6 +113,12 @@ ${OBJECTDIR}/core.o: core.c  .generated_files/flags/default/a2a69b53d0e799fa42fe
 	@${RM} ${OBJECTDIR}/core.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  core.c  -o ${OBJECTDIR}/core.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/core.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/d13cf6426f8756d2e36dede1215f2e19b7d6c14f .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lcd.o.d 
+	@${RM} ${OBJECTDIR}/lcd.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  lcd.c  -o ${OBJECTDIR}/lcd.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lcd.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/BNO085.o: BNO085.c  .generated_files/flags/default/22addce9405c48d4df09131c8f5fe576e06e4477 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
@@ -137,6 +143,12 @@ ${OBJECTDIR}/core.o: core.c  .generated_files/flags/default/b88e9fa276b8e272a37b
 	@${RM} ${OBJECTDIR}/core.o.d 
 	@${RM} ${OBJECTDIR}/core.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  core.c  -o ${OBJECTDIR}/core.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/core.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/lcd.o: lcd.c  .generated_files/flags/default/cde92ef42e71e012007dafb26cd3ade8595b9033 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/lcd.o.d 
+	@${RM} ${OBJECTDIR}/lcd.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  lcd.c  -o ${OBJECTDIR}/lcd.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/lcd.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 
