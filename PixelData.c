@@ -3,13 +3,10 @@
 #include "stdint.h"
 #include "PixelData.h"
 
-#define ROWS 9
-#define COLS 16
-
-LED leds[ROWS][COLS]; //array for 144 LED pixels
-                 //2D array struct [rows][columns] -> [y position][x position]
+LED leds[ROWS][COLS];
 
 void init_pixels(uint8_t numLit){
+    
     //clear all LED pixels' properties
     for (int row = 0; row < ROWS; row++) {
         for (int col = 0; col < COLS; col++) {

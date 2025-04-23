@@ -30,6 +30,9 @@
       <itemPath>lcd.c</itemPath>
       <itemPath>lcd.h</itemPath>
       <itemPath>PixelData.c</itemPath>
+      <itemPath>PositionCalculator.c</itemPath>
+      <itemPath>LED_144_Lib.c</itemPath>
+      <itemPath>LED_144_Lib.h</itemPath>
     </logicalFolder>
   </logicalFolder>
   <sourceRootList>

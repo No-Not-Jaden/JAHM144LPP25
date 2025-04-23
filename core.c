@@ -11,6 +11,9 @@
 #include "lcd.h"
 #include "I2CLib.h"
 #include <math.h>
+#include "PixelData.h"
+#include "PositionCalculator.h"
+#include "LED_144_Lib.h"
 
 
 // CW1: FLASH CONFIGURATION WORD 1 (see PIC24 Family Reference Manual 24.1)
@@ -46,9 +49,12 @@ void setup() {
     
     init_i2c();
     bno085_init();
-    delay(1000);
+    delay(500);
+    init_pixels(49);
     lcd_init();
-    
+    led_init();
+    write_all();
+    delay(500);
 }
 
 int main(void) {
@@ -57,9 +63,25 @@ int main(void) {
     while (1) {
         // get the gravity vector
         getGravityVector(&vector);
-        // normalize it
-        normalize(&vector);
         
+        if (vector.average_count > 0) {
+            // normalize it
+            normalize(&vector);
+            displayGravityVector();
+            
+            // apply acceleration
+            float ax = vector.x * 9.8f;
+            float ay = vector.y * 9.8f;
+            for (uint8_t row = 0; row < ROWS; row++) {
+                for (uint8_t col = 0; col < COLS; col++) {
+                    applyAcceleration(col, row, ax, ay, vector.deltaTime); // crashes
+                }
+            }
+            // display LEDS on device
+            write_all();
+        }
+        // delay for next update
+        delay(200);
         
     }
     return 0;
@@ -71,16 +93,6 @@ void normalize(GravityVector* vector) {
     vector->x = vector->x / magnitude;
     vector->y = vector->y / magnitude;
     vector->z = vector->z / magnitude;
-}
-
-// returns the X acceleration of the normalized gravity vector
-float getAccelerationX() {
-    return vector.x * 9.8f;
-}
-
-// returns the Y acceleration of the normalized gravity vector
-float getAccelerationY() {
-    return vector.y * 9.8f;
 }
 
 void displayGravityVector() {

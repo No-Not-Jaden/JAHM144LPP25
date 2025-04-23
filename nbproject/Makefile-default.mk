@@ -51,17 +51,17 @@ OBJECTDIR=build/${CND_CONF}/${IMAGE_TYPE}
 DISTDIR=dist/${CND_CONF}/${IMAGE_TYPE}
 
 # Source Files Quoted if spaced
-SOURCEFILES_QUOTED_IF_SPACED=BNO085.c queue.c I2CLib.c core.c lcd.c PixelData.c
+SOURCEFILES_QUOTED_IF_SPACED=BNO085.c queue.c I2CLib.c core.c lcd.c PixelData.c PositionCalculator.c LED_144_Lib.c
 
 # Object Files Quoted if spaced
-OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/PixelData.o
-POSSIBLE_DEPFILES=${OBJECTDIR}/BNO085.o.d ${OBJECTDIR}/queue.o.d ${OBJECTDIR}/I2CLib.o.d ${OBJECTDIR}/core.o.d ${OBJECTDIR}/lcd.o.d ${OBJECTDIR}/PixelData.o.d
+OBJECTFILES_QUOTED_IF_SPACED=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/PixelData.o ${OBJECTDIR}/PositionCalculator.o ${OBJECTDIR}/LED_144_Lib.o
+POSSIBLE_DEPFILES=${OBJECTDIR}/BNO085.o.d ${OBJECTDIR}/queue.o.d ${OBJECTDIR}/I2CLib.o.d ${OBJECTDIR}/core.o.d ${OBJECTDIR}/lcd.o.d ${OBJECTDIR}/PixelData.o.d ${OBJECTDIR}/PositionCalculator.o.d ${OBJECTDIR}/LED_144_Lib.o.d
 
 # Object Files
-OBJECTFILES=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/PixelData.o
+OBJECTFILES=${OBJECTDIR}/BNO085.o ${OBJECTDIR}/queue.o ${OBJECTDIR}/I2CLib.o ${OBJECTDIR}/core.o ${OBJECTDIR}/lcd.o ${OBJECTDIR}/PixelData.o ${OBJECTDIR}/PositionCalculator.o ${OBJECTDIR}/LED_144_Lib.o
 
 # Source Files
-SOURCEFILES=BNO085.c queue.c I2CLib.c core.c lcd.c PixelData.c
+SOURCEFILES=BNO085.c queue.c I2CLib.c core.c lcd.c PixelData.c PositionCalculator.c LED_144_Lib.c
 
 
 
@@ -125,6 +125,18 @@ ${OBJECTDIR}/PixelData.o: PixelData.c  .generated_files/flags/default/be1f1387fc
 	@${RM} ${OBJECTDIR}/PixelData.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  PixelData.c  -o ${OBJECTDIR}/PixelData.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/PixelData.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
+${OBJECTDIR}/PositionCalculator.o: PositionCalculator.c  .generated_files/flags/default/f17195ca7ede09f8371739382ca09a924080e129 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PositionCalculator.o.d 
+	@${RM} ${OBJECTDIR}/PositionCalculator.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  PositionCalculator.c  -o ${OBJECTDIR}/PositionCalculator.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/PositionCalculator.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/LED_144_Lib.o: LED_144_Lib.c  .generated_files/flags/default/2f2c0998a09f6ef6b38a62a7eeedc07cbb81f129 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LED_144_Lib.o.d 
+	@${RM} ${OBJECTDIR}/LED_144_Lib.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  LED_144_Lib.c  -o ${OBJECTDIR}/LED_144_Lib.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/LED_144_Lib.o.d"      -g -D__DEBUG     -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
 else
 ${OBJECTDIR}/BNO085.o: BNO085.c  .generated_files/flags/default/22addce9405c48d4df09131c8f5fe576e06e4477 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
 	@${MKDIR} "${OBJECTDIR}" 
@@ -161,6 +173,18 @@ ${OBJECTDIR}/PixelData.o: PixelData.c  .generated_files/flags/default/70368d61bd
 	@${RM} ${OBJECTDIR}/PixelData.o.d 
 	@${RM} ${OBJECTDIR}/PixelData.o 
 	${MP_CC} $(MP_EXTRA_CC_PRE)  PixelData.c  -o ${OBJECTDIR}/PixelData.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/PixelData.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/PositionCalculator.o: PositionCalculator.c  .generated_files/flags/default/dc11503281a91983597b71becb84d6d8ab9ff417 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/PositionCalculator.o.d 
+	@${RM} ${OBJECTDIR}/PositionCalculator.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  PositionCalculator.c  -o ${OBJECTDIR}/PositionCalculator.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/PositionCalculator.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
+	
+${OBJECTDIR}/LED_144_Lib.o: LED_144_Lib.c  .generated_files/flags/default/cba787a744482d6e70e3b3d462b596667456d9d6 .generated_files/flags/default/da39a3ee5e6b4b0d3255bfef95601890afd80709
+	@${MKDIR} "${OBJECTDIR}" 
+	@${RM} ${OBJECTDIR}/LED_144_Lib.o.d 
+	@${RM} ${OBJECTDIR}/LED_144_Lib.o 
+	${MP_CC} $(MP_EXTRA_CC_PRE)  LED_144_Lib.c  -o ${OBJECTDIR}/LED_144_Lib.o  -c -mcpu=$(MP_PROCESSOR_OPTION)  -MP -MMD -MF "${OBJECTDIR}/LED_144_Lib.o.d"        -g -omf=elf -DXPRJ_default=$(CND_CONF)    $(COMPARISON_BUILD)  -O0 -msmart-io=1 -Wall -msfr-warn=off    -mdfp="${DFP_DIR}/xc16"
 	
 endif
 

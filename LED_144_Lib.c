@@ -11,6 +11,7 @@
 #include "xc.h"
 #include <stdio.h>
 #include "LED_144_Lib.h"
+
 #include "stdint.h"
 
 //Define the slave address, 0xE8
@@ -52,12 +53,7 @@ void led_init(void){
     data[1] = 0x00; //Go to frame 1
     transmit_packet(SLAVE_ADDRESS, data, 2);
     
-   int i = 0; //turn off all the led's
-    for (i = 0; i<0x12; i++){
-        data[0] = i;
-        data[1] = 0x00;
-        transmit_packet(SLAVE_ADDRESS, data, 2);
-    }
+    write_all();
 }
 
 /*
@@ -109,5 +105,34 @@ void led_write(uint8_t row, uint8_t column, uint8_t brightness){
         data[1] = 0x01 << (column-9);
     }
     transmit_packet(SLAVE_ADDRESS, data, 2);
-   
 }
+
+
+ void write_all () {
+      int i = 0, j = 0, k = 0;
+     uint8_t data[146];
+       for(i = 0; i<146; i++){
+           data[i] = 0;
+       }
+               
+      data[0] = 0xFD; //Select a frame register
+      data[0] = 0x00; //Go to frame one
+      transmit_packet(SLAVE_ADDRESS, data, 2);
+         
+     data[0] = 0x00;
+     for( i = 1; i<= 18; i++){
+         data[i] = 0xFF;
+         
+     }
+     transmit_packet(SLAVE_ADDRESS, data, 19);
+     
+       //start with the brightness
+    data[0] = 0x24;
+    i = 1;
+    for(j = 0; j < 9; j++){
+        for(k = 0; k<16; k++){
+            data[i++] = leds[j][k].brightness;
+        }
+    }
+     transmit_packet(SLAVE_ADDRESS, data, 145);
+ }

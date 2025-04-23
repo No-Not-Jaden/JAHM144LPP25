@@ -52,7 +52,7 @@ extern "C" {
      * raw relative position is greater than 1, then the pixel will attempt to
      * move.
      * 
-     * dx = vx*dt + (1/2)*ax*t^2
+     * dx = vx*dt + (1/2)*ax*dt^2
      * 
      * @param x     The x position of the pixel to apply the acceleration to.
      * @param y     The y position of the pixel to apply acceleration to.

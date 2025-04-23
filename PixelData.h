@@ -12,11 +12,17 @@
 extern "C" {
 #endif
     
+    #define ROWS 9
+    #define COLS 16
+    
     typedef struct {
-        uint8_t brightness;     // brighness of the LED
+        uint8_t brightness;     // brightness of the LED
         float vx, vy;           // velocity of the LED
-        float rx, ry;           // 
+        float rx, ry;           // raw relative position
     } LED;
+    
+    extern LED leds[ROWS][COLS]; //array for 144 LED pixels
+                 //2D array struct [rows][columns] -> [y position][x position]
 
     /* Initialize the pixel data with some pixels lit.
      * 
