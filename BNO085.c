@@ -61,6 +61,8 @@ volatile int resetStatus = 0;
 #define Q14_SCALE (1.0f / 16384.0f) // Q14 means the number should be divided by 2^14
 #define MIN_ACCURACY 2
 #define GRAVITY_REPORT_INTERVAL 0xC350 // in microseconds (50000 us = 20Hz)
+#define GRAVITY_VECTOR_ID 0x06
+#define ROTATION_VECTOR_ID 0x05
 
 void enable_gravity_vector(){
     // https://www.ceva-ip.com/wp-content/uploads/SH-2-Reference-Manual.pdf
@@ -70,7 +72,7 @@ void enable_gravity_vector(){
                     bnoControlChannel,              // Channel (Sensor Hub Control)
                     send_sequence++,              // Sequence number
                     0xFD,              // Set Feature Command
-                    0x06,              // Gravity Vector Feature Report ID
+                    GRAVITY_VECTOR_ID,              // Gravity Vector Feature Report ID
                     0x00,        // Feature flags (0 = default)
                     0x00, 0x00,        // Change sensitivity (disabled)
                     ((uint8_t) (GRAVITY_REPORT_INTERVAL & 0xFF)), // 32-bit Report interval in microseconds LSB to MSB
@@ -81,6 +83,25 @@ void enable_gravity_vector(){
                     0x00, 0x00, 0x00, 0x00   // Sensor-specific config (default)
                   };
     
+    transmit_packet(BNO_ADDRESS << 1, data, 21);
+}
+
+void enable_rotation_vector() {
+    uint8_t data[] = {
+                    0x15, 0x00,        // SHTP header (length = 21 bytes) LSB then MSB
+                    bnoControlChannel,              // Channel (Sensor Hub Control)
+                    send_sequence++,              // Sequence number
+                    0xFD,              // Set Feature Command
+                    ROTATION_VECTOR_ID,              // Gravity Vector Feature Report ID
+                    0x00,        // Feature flags (0 = default)
+                    0x00, 0x00,        // Change sensitivity (disabled)
+                    ((uint8_t) (GRAVITY_REPORT_INTERVAL & 0xFF)), // 32-bit Report interval in microseconds LSB to MSB
+                    ((uint8_t) (GRAVITY_REPORT_INTERVAL >> 8 & 0xFF)),
+                    ((uint8_t) (GRAVITY_REPORT_INTERVAL >> 16 & 0xFF)),
+                    ((uint8_t) (GRAVITY_REPORT_INTERVAL >> 24 & 0xFF)),  
+                    0x00, 0x00, 0x00, 0x00,  // Batch interval (disabled)
+                    0x00, 0x00, 0x00, 0x00   // Sensor-specific config (default)
+                  };
     transmit_packet(BNO_ADDRESS << 1, data, 21);
 }
 
@@ -222,20 +243,66 @@ void processMessage() {
            baseDelta |= (long) buffer[index++] << 24;
            reportID = buffer[index++];
         }
-        if (reportID == 0x06) {
+        if (reportID == GRAVITY_VECTOR_ID) {
             uint8_t sequenceNum = buffer[index++]; // specific for this report
             uint8_t status = buffer[index++] & 0x03; // 0-3 for accuracy
             // buffer[7] is delay
+            index++;
             if (status < MIN_ACCURACY)
                 return;
 
-            unsigned int rawX = (unsigned int) buffer[index++];
-            rawX |= (unsigned int) buffer[index++] << 8;
-            unsigned int rawY = (unsigned int) buffer[index++];
-            rawY |= (unsigned int) buffer[index++] << 8;
-            unsigned int rawZ = (unsigned int) buffer[index++];
-            rawZ |= (unsigned int) buffer[index++] << 8;
+            int16_t rawX = (int16_t)((buffer[index]) | (buffer[index + 1] << 8));
+            index += 2;
+            int16_t rawY = (int16_t)((buffer[index]) | (buffer[index + 1] << 8));
+            index += 2;
+            int16_t rawZ = (int16_t)((buffer[index]) | (buffer[index + 1] << 8));
+            index += 2;
 
+            // converts to floating point
+            if (gravityVector.average_count == 0) {
+                // have not stored anything here yet
+                gravityVector.x = ((int) rawX) * Q14_SCALE;
+                gravityVector.y = ((int) rawY) * Q14_SCALE;
+                gravityVector.z = ((int) rawZ) * Q14_SCALE;
+            } else {
+                // merge with previous values
+                float prevMultiplier = gravityVector.average_count / (gravityVector.average_count + 1.0f);
+                float curMultiplier = 1 / (gravityVector.average_count + 1.0f);
+                gravityVector.x = prevMultiplier * gravityVector.x + curMultiplier * (((int) rawX) * Q14_SCALE);
+                gravityVector.y = prevMultiplier * gravityVector.y + curMultiplier * (((int) rawY) * Q14_SCALE);
+                gravityVector.z = prevMultiplier * gravityVector.z + curMultiplier * (((int) rawZ) * Q14_SCALE);
+            }
+            gravityVector.deltaTime += baseDelta;
+            gravityVector.average_count++;
+        } else if (reportID == ROTATION_VECTOR_ID) {
+            uint8_t sequenceNum = buffer[index++]; // specific for this report
+            uint8_t status = buffer[index++] & 0x03; // 0-3 for accuracy
+            // buffer[7] is delay
+            index++;
+            if (status < MIN_ACCURACY)
+                return;
+            int16_t icomponent = (int16_t)((buffer[index]) | (buffer[index + 1] << 8));
+            index += 2;
+
+            int16_t jcomponent = (int16_t)((buffer[index]) | (buffer[index + 1] << 8));
+            index += 2;
+
+            int16_t kcomponent = (int16_t)((buffer[index]) | (buffer[index + 1] << 8));
+            index += 2;
+
+            int16_t realcomponent = (int16_t)((buffer[index]) | (buffer[index + 1] << 8));
+            index += 2;
+            // In addition, an estimate of the heading accuracy is
+            // reported. The units for the accuracy estimate are radians. The Q point is 12.
+            int16_t accuracy = (int16_t)((buffer[index]) | (buffer[index + 1] << 8));
+            float radians = accuracy / 4096.0f;
+            
+            index += 2;
+            
+            int rawX = 2 * (icomponent * kcomponent - realcomponent * jcomponent);
+            int rawY = 2 * (jcomponent * kcomponent + realcomponent * icomponent);
+            int rawZ = 1 - 2 * (icomponent * icomponent + jcomponent * jcomponent);
+            
             // converts to floating point
             if (gravityVector.average_count == 0) {
                 // have not stored anything here yet
@@ -257,6 +324,7 @@ void processMessage() {
     
     if (resetStatus == 2) {
         resetStatus++;
+        //enable_rotation_vector();
         enable_gravity_vector();
     }
     

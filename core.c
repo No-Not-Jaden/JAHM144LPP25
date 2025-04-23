@@ -67,19 +67,20 @@ int main(void) {
         if (vector.average_count > 0) {
             // normalize it
             normalize(&vector);
-            displayGravityVector();
             
             // apply acceleration
             float ax = vector.x * 9.8f;
             float ay = vector.y * 9.8f;
             for (uint8_t row = 0; row < ROWS; row++) {
                 for (uint8_t col = 0; col < COLS; col++) {
-                    applyAcceleration(col, row, ax, ay, vector.deltaTime); // crashes
+                    applyAcceleration(col, row, ay, ax, vector.deltaTime);
                 }
             }
             // display LEDS on device
             write_all();
+            clearMoved();
         }
+        displayGravityVector();
         // delay for next update
         delay(200);
         

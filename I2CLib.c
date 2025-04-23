@@ -69,7 +69,7 @@ void stopTransmission() {
 
 int getTransmissionsUsed() {
     int count = 0;
-    for (int i = 0; i < MAX_DATA_SIZE + 2; i++) {
+    for (int i = 0; i < MAX_QUEUE_SIZE + 2; i++) {
         if (transmission_used[i]) {
             count++;
         }
@@ -79,7 +79,7 @@ int getTransmissionsUsed() {
 
 // Get a free Transmission slot
 Transmission* allocate_transmission() {
-    for (int i = 0; i < MAX_DATA_SIZE + 2; i++) {
+    for (int i = 0; i < MAX_QUEUE_SIZE + 2; i++) {
         if (!transmission_used[i]) {
             transmission_used[i] = 1;
             return &transmission_pool[i];
@@ -91,7 +91,7 @@ Transmission* allocate_transmission() {
 // Free after use
 void free_transmission(Transmission* t) {
     int index = t - transmission_pool;
-    if (index >= 0 && index < MAX_DATA_SIZE + 2) {
+    if (index >= 0 && index < MAX_QUEUE_SIZE + 2) {
         transmission_used[index] = 0;
     }
 }

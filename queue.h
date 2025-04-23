@@ -14,7 +14,7 @@
 extern "C" {
 #endif
     
-    #define MAX_QUEUE_SIZE 24
+    #define MAX_QUEUE_SIZE 20
     #define MAX_DATA_SIZE 146
     
     // structure of elements in the queue

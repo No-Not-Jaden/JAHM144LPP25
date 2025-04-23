@@ -9,7 +9,7 @@
 #include "xc.h"
 #include "PixelData.h"
 
-#define LED_ON 40
+#define LED_ON 10
 #define LED_OFF 0
 
 
@@ -22,8 +22,8 @@
      * @param dx    The change in x position. (Should be -1, 0, or 1)
      * @param dy    The change in y position. (Should be -1, 0, or 1)
      */
-    uint8_t isOpen(uint8_t x, uint8_t y, int dx, int dy){
-        if (getBrightness(x + dx, y + dy) == LED_ON){
+    uint8_t isOpen(uint8_t x, uint8_t y, int8_t dx, int8_t dy){
+        if (getBrightness(x + dx, y + dy) > LED_ON){
             return 0;
         } else {
             return 1;
@@ -46,22 +46,15 @@
         float OrignalY = getRawRelativePositionY(xFrom, yFrom);
         float OrignalBright = getBrightness(xFrom, yFrom);
         
-         if (xFrom != xTo && yFrom != yTo){
-            setRawRelativePosition(xTo, yTo, 0.0, 0.0);
-        } else if (xFrom != xTo){
-            setRawRelativePosition(xTo, yTo, 0.0, OrignalY);
-        } else if (yFrom != yTo){
-            setRawRelativePosition(xTo, yTo, OrignalX, 0.0);
-        } else {
-            setRawRelativePosition(xTo, yTo, OrignalX, OrignalY);
-        }
-               
+        setRawRelativePosition(xTo, yTo, OrignalX - (xTo - xFrom), OrignalY - (yTo - yFrom));
+        setMoved(xTo, yTo, 1);
         setVelocity(xTo, yTo, OrignalVelX, OrignalVelY);
         setBrightness(xTo, yTo, OrignalBright);
        
         setRawRelativePosition(xFrom, yFrom, 0, 0);
         setVelocity(xFrom, yFrom, 0.0, 0.0);
-        setBrightness(xTo, yTo, LED_OFF);
+        setBrightness(xFrom, yFrom, LED_OFF);
+        
     }
     
     /* Try to move a pixel in a direction. If there is already a pixel in the
@@ -73,9 +66,33 @@
      * @param dx    The change in x position. (Should be -1, 0, or 1)
      * @param dy    The change in y position. (Should be -1, 0, or 1)   
      */
-    void tryMovePixel(uint8_t x, uint8_t y, int dx, int dy){
-        if (isOpen(x, y, dx, dy) == 1){
-            movePixel(x, y, x + dx, y + dy);            
+    void tryMovePixel(uint8_t x, uint8_t y, int8_t dx, int8_t dy){
+        if ((x == 0 && dx < 0) || (x == COLS - 1 && dx > 0)) {
+            dx = 0;
+            // cannot move, reset raw pos and velocity
+            setRawRelativePosition(x, y, 0, getRawRelativePositionY(x, y));
+            setVelocity(x, y, 0.0, getVelocityY(x, y));
+        }
+        
+        if ((y == 0 && dy < 0) || (y == ROWS - 1 && dy > 0)) {
+            dy = 0;
+            // cannot move, reset raw pos and velocity
+            setRawRelativePosition(x, y, getRawRelativePositionX(x, y), 0);
+            setVelocity(x, y, getVelocityX(x, y), 0.0);
+        }
+        
+        if (isOpen(x, y, 0, 0) == 0 && (dx != 0 || dy != 0)) {
+            // pixel present
+            if (isOpen(x, y, dx, 0) == 1) {
+                movePixel(x, y, x + dx, y);
+            } else if (isOpen(x, y, 0, dy) == 1) {
+                movePixel(x, y, x, y + dy);
+            } else {
+                // cannot move, reset velocity
+                setVelocity(x, y, 0.0, 0.0);
+                setRawRelativePosition(x, y, 0, 0);
+            }
+            
         }
     }
     
@@ -85,14 +102,13 @@
      * 
      * @param d    The change in x or y position. 
      */
-    uint8_t round(float d){
-        if (d < -1){
+    int8_t signint(float d){
+        if (d < -0.5){
             return -1;
-        } else if (-1 <= d && d <= 1){
-            return 0;
-        } else if (d > 1){
+        } else if (d > 0.5){
             return 1;
         }
+        return 0;
     }
     
     
@@ -112,48 +128,31 @@
      * @param y     The y position of the pixel to apply acceleration to.
      * @param ax    The x component of the acceleration being applied to the pixel.
      * @param ay    The y component of the acceleration being applied to the pixel.
-     * @param dt    The change in time since the last acceleration (in milliseconds).
+     * @param dt    The change in time since the last acceleration (in 100 us ticks).
      */
-    void applyAcceleration(uint8_t x, uint8_t y, float ax, float ay, unsigned int dt){
+    void applyAcceleration(uint8_t x, uint8_t y, float ax, float ay, unsigned long dt){
+        if (isMoved(x, y)) {
+            return;
+        }
         float OrignalVelX = getVelocityX(x, y);
         float OrignalVelY = getVelocityY(x, y);
         float OrignalX = getRawRelativePositionX(x, y);
         float OrignalY = getRawRelativePositionY(x, y);
+        float timeChange = dt / 1000.0f; // convert dt to seconds
+           
         
-        float AccelX = OrignalVelX * dt;
-        float AccelY = OrignalVelY * dt;          
+        float CurrentVelX = OrignalVelX + ax * timeChange;
+        float CurrentVelY = OrignalVelY + ay * timeChange;
         
-        float CurrentVelX = OrignalVelX + AccelX * dt;
-        float CurrentVelY = OrignalVelY + AccelY * dt;
-        
-        float dx = OrignalVelX * dt + 0.5 * AccelX * dt * dt;
-        float dy = OrignalVelY * dt + 0.5 * AccelY * dt * dt;
+        float dx = OrignalVelX * timeChange + 0.5 * ax * timeChange * timeChange;
+        float dy = OrignalVelY * timeChange + 0.5 * ay * timeChange * timeChange;
         
         float RawX = OrignalX + dx;
-        float RawY = OrignalY + dx;
+        float RawY = OrignalY + dy;
         
         setRawRelativePosition(x, y, RawX, RawY);
         setVelocity(x, y, CurrentVelX, CurrentVelY);
         
-        if ( (RawX > 1 || RawX < -1) || (RawY > 1 || RawY < -1) ) {
-            tryMovePixel(x, y, round(dx), round(dy));
-        }
-//        if (RawX > 1 && RawY > 1){
-//            tryMovePixel(x, y, dx, dy);    
-//        } else if (RawX < -1 && RawY > 1){
-//            tryMovePixel(x, y, dx, dy);
-//        } else if (RawX > 1 && RawY < -1){
-//            tryMovePixel(x, y, dx, dy);
-//        } else if (RawX < -1 && RawY < -1){
-//            tryMovePixel(x, y, dx, dy);
-//        } else if (RawX < -1){
-//            tryMovePixel(x, y, dx, dy);
-//        } else if (RawX > 1){
-//            tryMovePixel(x, y, dx, dy);
-//        } else if (RawY > 1){
-//            tryMovePixel(x, y, dx, dy);
-//        } else if (RawY < -1){
-//            tryMovePixel(x, y, dx, dy);
-//        }
+        tryMovePixel(x, y, signint(RawX), signint(RawY));
     }
 

@@ -19,6 +19,7 @@ extern "C" {
         uint8_t brightness;     // brightness of the LED
         float vx, vy;           // velocity of the LED
         float rx, ry;           // raw relative position
+        uint8_t moved;
     } LED;
     
     extern LED leds[ROWS][COLS]; //array for 144 LED pixels
@@ -90,6 +91,12 @@ extern "C" {
      * @param ry    The y component of the relative position of the pixel
      */
     void setRawRelativePosition(uint8_t x, uint8_t y, float rx, float ry);
+    
+    uint8_t isMoved(uint8_t x, uint8_t y);
+    
+    void setMoved(uint8_t x, uint8_t y, uint8_t moved);
+    
+    void clearMoved();
 
 
 #ifdef	__cplusplus

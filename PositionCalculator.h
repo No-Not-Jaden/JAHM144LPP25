@@ -60,7 +60,7 @@ extern "C" {
      * @param xy    The y component of the acceleration being applied to the pixel.
      * @param dt    The change in time since the last acceleration (in milliseconds).
      */
-    void applyAcceleration(uint8_t x, uint8_t y, float ax, float ay, unsigned int dt);
+    void applyAcceleration(uint8_t x, uint8_t y, float ax, float ay, unsigned long dt);
 
 
 #ifdef	__cplusplus
