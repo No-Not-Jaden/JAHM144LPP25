@@ -1,20 +1,1000 @@
-
-7202 1745423613093 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_PIC24FJ64GA002 Pre:DebugReadTargetMemory
-7202 1745423613093 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_PIC24FJ64GA002 Payload
-7202 1745423613093 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_PIC24FJ64GA002 FileRegs
-7202 1745423613093 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_PIC24FJ64GA002 81e
-7202 1745423613093 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_PIC24FJ64GA002 81f
-7202 1745423613093 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_PIC24FJ64GA002 Length = 2
-7202 1745423613093 GEN4_TO_CONTROLLER_LOG:GEN4_DEBUG_INT_LOG_PIC24FJ64GA002 Payload End
-7202 1745423613093 XXXX 1745423613093, Thread 7202: XXXX 1745423613093, Entering Thread 7202: Commands::runScriptWithUpload, script name = ReadRAM  
-7202 1745423613093 XXXX 1745423613093, Thread 7202: XXXX 1745423613093, Entering Thread 7202: ToolCommUsb::readTransfer, sideData is 0x28 bytes long, transferDataLength is 0x2 bytes long  
-7202 1745423617563 XXXX 1745423617563, Thread 7202: com.Send returned false 
-7202 1745423617563 XXXX 1745423617563, Thread 7202: readTransfer: exception after writeHeaderAndGetAck null 
-7202 1745423617563 XXXX 1745423617563, Thread 7202: XXXX 1745423617563, Entering Thread 7202: ToolCommUsb::recoverFromProtocolError, type = NO_SCRIPT  
-7202 1745423617563 XXXX 1745423617563, Thread 7202: Send Abort Script Engine Command 
-7202 1745423617563 XXXX 1745423617563, Thread 7202: XXXX 1745423617563, Entering Thread 7202: ToolCommUsb::killScriptEngine  
-7202 1745423617566 XXXX 1745423617566, Thread 7202: com.Send returned false 
-7202 1745423617566 XXXX 1745423617566, Thread 7202: Failed sending Abort Script Engine Command. Set nuclear option = true 
-7202 1745423617566 XXXX 1745423617566, Thread 7202: About to nuke 
-7202 1745423617566 XXXX 1745423617566, Thread 7202: XXXX 1745423617566, Entering Thread 7202: ToolCommUsb::nuclearOption  
-7202 1745423617571 XXXX 1745423617571, Thread 7202: com.Send returned false 
+70284 1745637524755 XXXX 1745637524755, Thread 70284: XXXX 1745637524755, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637524854 XXXX 1745637524854, Thread 70284: XXXX 1745637524854, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637524855 XXXX 1745637524855, Thread 70284: XXXX 1745637524855, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637524956 XXXX 1745637524956, Thread 70284: XXXX 1745637524956, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637524957 XXXX 1745637524957, Thread 70284: XXXX 1745637524957, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525056 XXXX 1745637525056, Thread 70284: XXXX 1745637525056, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525057 XXXX 1745637525057, Thread 70284: XXXX 1745637525057, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525157 XXXX 1745637525157, Thread 70284: XXXX 1745637525157, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525158 XXXX 1745637525158, Thread 70284: XXXX 1745637525158, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525258 XXXX 1745637525258, Thread 70284: XXXX 1745637525258, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525260 XXXX 1745637525260, Thread 70284: XXXX 1745637525260, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525358 XXXX 1745637525358, Thread 70284: XXXX 1745637525358, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525359 XXXX 1745637525359, Thread 70284: XXXX 1745637525359, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525458 XXXX 1745637525458, Thread 70284: XXXX 1745637525458, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525460 XXXX 1745637525460, Thread 70284: XXXX 1745637525460, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525559 XXXX 1745637525559, Thread 70284: XXXX 1745637525559, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525561 XXXX 1745637525561, Thread 70284: XXXX 1745637525561, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525660 XXXX 1745637525660, Thread 70284: XXXX 1745637525660, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525661 XXXX 1745637525661, Thread 70284: XXXX 1745637525661, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525761 XXXX 1745637525761, Thread 70284: XXXX 1745637525761, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525761 XXXX 1745637525761, Thread 70284: XXXX 1745637525761, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525864 XXXX 1745637525863, Thread 70284: XXXX 1745637525863, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525865 XXXX 1745637525865, Thread 70284: XXXX 1745637525865, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637525963 XXXX 1745637525963, Thread 70284: XXXX 1745637525963, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637525965 XXXX 1745637525965, Thread 70284: XXXX 1745637525965, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526064 XXXX 1745637526064, Thread 70284: XXXX 1745637526064, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526066 XXXX 1745637526066, Thread 70284: XXXX 1745637526066, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526165 XXXX 1745637526165, Thread 70284: XXXX 1745637526165, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526167 XXXX 1745637526167, Thread 70284: XXXX 1745637526167, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526267 XXXX 1745637526267, Thread 70284: XXXX 1745637526267, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526268 XXXX 1745637526268, Thread 70284: XXXX 1745637526268, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526368 XXXX 1745637526368, Thread 70284: XXXX 1745637526368, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526369 XXXX 1745637526369, Thread 70284: XXXX 1745637526369, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526468 XXXX 1745637526468, Thread 70284: XXXX 1745637526468, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526470 XXXX 1745637526470, Thread 70284: XXXX 1745637526470, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526569 XXXX 1745637526569, Thread 70284: XXXX 1745637526569, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526571 XXXX 1745637526571, Thread 70284: XXXX 1745637526571, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526670 XXXX 1745637526670, Thread 70284: XXXX 1745637526670, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526670 XXXX 1745637526670, Thread 70284: XXXX 1745637526670, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526771 XXXX 1745637526771, Thread 70284: XXXX 1745637526771, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526772 XXXX 1745637526772, Thread 70284: XXXX 1745637526772, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526871 XXXX 1745637526871, Thread 70284: XXXX 1745637526871, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526872 XXXX 1745637526872, Thread 70284: XXXX 1745637526872, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637526971 XXXX 1745637526971, Thread 70284: XXXX 1745637526971, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637526972 XXXX 1745637526972, Thread 70284: XXXX 1745637526972, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527072 XXXX 1745637527072, Thread 70284: XXXX 1745637527072, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527073 XXXX 1745637527073, Thread 70284: XXXX 1745637527073, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527174 XXXX 1745637527174, Thread 70284: XXXX 1745637527174, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527175 XXXX 1745637527175, Thread 70284: XXXX 1745637527175, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527275 XXXX 1745637527275, Thread 70284: XXXX 1745637527275, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527276 XXXX 1745637527276, Thread 70284: XXXX 1745637527276, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527375 XXXX 1745637527375, Thread 70284: XXXX 1745637527375, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527377 XXXX 1745637527377, Thread 70284: XXXX 1745637527377, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527477 XXXX 1745637527477, Thread 70284: XXXX 1745637527477, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527477 XXXX 1745637527477, Thread 70284: XXXX 1745637527477, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527577 XXXX 1745637527577, Thread 70284: XXXX 1745637527577, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527578 XXXX 1745637527578, Thread 70284: XXXX 1745637527578, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527678 XXXX 1745637527678, Thread 70284: XXXX 1745637527678, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527679 XXXX 1745637527679, Thread 70284: XXXX 1745637527679, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527779 XXXX 1745637527779, Thread 70284: XXXX 1745637527779, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527780 XXXX 1745637527780, Thread 70284: XXXX 1745637527780, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527879 XXXX 1745637527879, Thread 70284: XXXX 1745637527879, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527881 XXXX 1745637527881, Thread 70284: XXXX 1745637527881, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637527979 XXXX 1745637527979, Thread 70284: XXXX 1745637527979, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637527981 XXXX 1745637527981, Thread 70284: XXXX 1745637527981, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528080 XXXX 1745637528080, Thread 70284: XXXX 1745637528080, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528082 XXXX 1745637528082, Thread 70284: XXXX 1745637528082, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528181 XXXX 1745637528181, Thread 70284: XXXX 1745637528181, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528183 XXXX 1745637528183, Thread 70284: XXXX 1745637528183, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528281 XXXX 1745637528281, Thread 70284: XXXX 1745637528281, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528282 XXXX 1745637528282, Thread 70284: XXXX 1745637528282, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528381 XXXX 1745637528381, Thread 70284: XXXX 1745637528381, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528381 XXXX 1745637528381, Thread 70284: XXXX 1745637528381, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528481 XXXX 1745637528481, Thread 70284: XXXX 1745637528481, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528483 XXXX 1745637528483, Thread 70284: XXXX 1745637528483, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528581 XXXX 1745637528581, Thread 70284: XXXX 1745637528581, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528581 XXXX 1745637528581, Thread 70284: XXXX 1745637528581, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528682 XXXX 1745637528682, Thread 70284: XXXX 1745637528682, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528683 XXXX 1745637528683, Thread 70284: XXXX 1745637528683, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528783 XXXX 1745637528783, Thread 70284: XXXX 1745637528783, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528783 XXXX 1745637528783, Thread 70284: XXXX 1745637528783, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528885 XXXX 1745637528884, Thread 70284: XXXX 1745637528884, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528886 XXXX 1745637528886, Thread 70284: XXXX 1745637528886, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637528985 XXXX 1745637528985, Thread 70284: XXXX 1745637528985, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637528987 XXXX 1745637528987, Thread 70284: XXXX 1745637528987, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529085 XXXX 1745637529085, Thread 70284: XXXX 1745637529085, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529086 XXXX 1745637529086, Thread 70284: XXXX 1745637529086, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529186 XXXX 1745637529186, Thread 70284: XXXX 1745637529186, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529187 XXXX 1745637529187, Thread 70284: XXXX 1745637529187, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529286 XXXX 1745637529286, Thread 70284: XXXX 1745637529286, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529288 XXXX 1745637529288, Thread 70284: XXXX 1745637529288, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529387 XXXX 1745637529387, Thread 70284: XXXX 1745637529387, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529388 XXXX 1745637529388, Thread 70284: XXXX 1745637529388, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529487 XXXX 1745637529487, Thread 70284: XXXX 1745637529487, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529489 XXXX 1745637529489, Thread 70284: XXXX 1745637529489, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529588 XXXX 1745637529588, Thread 70284: XXXX 1745637529588, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529589 XXXX 1745637529589, Thread 70284: XXXX 1745637529589, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529690 XXXX 1745637529690, Thread 70284: XXXX 1745637529690, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529692 XXXX 1745637529692, Thread 70284: XXXX 1745637529692, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529790 XXXX 1745637529790, Thread 70284: XXXX 1745637529790, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529791 XXXX 1745637529791, Thread 70284: XXXX 1745637529791, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529891 XXXX 1745637529891, Thread 70284: XXXX 1745637529891, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529892 XXXX 1745637529892, Thread 70284: XXXX 1745637529892, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637529993 XXXX 1745637529993, Thread 70284: XXXX 1745637529993, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637529994 XXXX 1745637529994, Thread 70284: XXXX 1745637529994, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530094 XXXX 1745637530094, Thread 70284: XXXX 1745637530094, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530096 XXXX 1745637530096, Thread 70284: XXXX 1745637530096, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530194 XXXX 1745637530194, Thread 70284: XXXX 1745637530194, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530194 XXXX 1745637530194, Thread 70284: XXXX 1745637530194, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530295 XXXX 1745637530295, Thread 70284: XXXX 1745637530295, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530297 XXXX 1745637530297, Thread 70284: XXXX 1745637530297, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530396 XXXX 1745637530396, Thread 70284: XXXX 1745637530396, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530397 XXXX 1745637530397, Thread 70284: XXXX 1745637530397, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530496 XXXX 1745637530496, Thread 70284: XXXX 1745637530496, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530498 XXXX 1745637530498, Thread 70284: XXXX 1745637530498, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530596 XXXX 1745637530596, Thread 70284: XXXX 1745637530596, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530597 XXXX 1745637530597, Thread 70284: XXXX 1745637530597, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530698 XXXX 1745637530698, Thread 70284: XXXX 1745637530698, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530699 XXXX 1745637530699, Thread 70284: XXXX 1745637530699, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530800 XXXX 1745637530800, Thread 70284: XXXX 1745637530800, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530800 XXXX 1745637530800, Thread 70284: XXXX 1745637530800, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637530901 XXXX 1745637530901, Thread 70284: XXXX 1745637530901, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637530902 XXXX 1745637530902, Thread 70284: XXXX 1745637530902, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531003 XXXX 1745637531003, Thread 70284: XXXX 1745637531003, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531004 XXXX 1745637531004, Thread 70284: XXXX 1745637531004, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531103 XXXX 1745637531103, Thread 70284: XXXX 1745637531103, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531104 XXXX 1745637531104, Thread 70284: XXXX 1745637531104, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531204 XXXX 1745637531204, Thread 70284: XXXX 1745637531204, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531205 XXXX 1745637531205, Thread 70284: XXXX 1745637531205, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531305 XXXX 1745637531305, Thread 70284: XXXX 1745637531305, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531307 XXXX 1745637531307, Thread 70284: XXXX 1745637531307, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531407 XXXX 1745637531407, Thread 70284: XXXX 1745637531407, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531408 XXXX 1745637531408, Thread 70284: XXXX 1745637531408, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531508 XXXX 1745637531508, Thread 70284: XXXX 1745637531508, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531509 XXXX 1745637531509, Thread 70284: XXXX 1745637531509, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531609 XXXX 1745637531609, Thread 70284: XXXX 1745637531609, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531610 XXXX 1745637531610, Thread 70284: XXXX 1745637531610, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531711 XXXX 1745637531711, Thread 70284: XXXX 1745637531711, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531713 XXXX 1745637531713, Thread 70284: XXXX 1745637531713, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531812 XXXX 1745637531812, Thread 70284: XXXX 1745637531812, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531812 XXXX 1745637531812, Thread 70284: XXXX 1745637531812, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637531911 XXXX 1745637531911, Thread 70284: XXXX 1745637531911, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637531912 XXXX 1745637531912, Thread 70284: XXXX 1745637531912, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532012 XXXX 1745637532012, Thread 70284: XXXX 1745637532012, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532014 XXXX 1745637532014, Thread 70284: XXXX 1745637532014, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532113 XXXX 1745637532113, Thread 70284: XXXX 1745637532113, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532114 XXXX 1745637532114, Thread 70284: XXXX 1745637532114, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532214 XXXX 1745637532214, Thread 70284: XXXX 1745637532214, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532215 XXXX 1745637532215, Thread 70284: XXXX 1745637532215, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532315 XXXX 1745637532315, Thread 70284: XXXX 1745637532315, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532316 XXXX 1745637532316, Thread 70284: XXXX 1745637532316, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532415 XXXX 1745637532415, Thread 70284: XXXX 1745637532415, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532416 XXXX 1745637532416, Thread 70284: XXXX 1745637532416, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532514 XXXX 1745637532514, Thread 70284: XXXX 1745637532514, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532516 XXXX 1745637532516, Thread 70284: XXXX 1745637532516, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532614 XXXX 1745637532614, Thread 70284: XXXX 1745637532614, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532616 XXXX 1745637532616, Thread 70284: XXXX 1745637532616, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532714 XXXX 1745637532714, Thread 70284: XXXX 1745637532714, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532715 XXXX 1745637532715, Thread 70284: XXXX 1745637532715, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532814 XXXX 1745637532814, Thread 70284: XXXX 1745637532814, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532816 XXXX 1745637532816, Thread 70284: XXXX 1745637532816, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637532915 XXXX 1745637532915, Thread 70284: XXXX 1745637532915, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637532917 XXXX 1745637532917, Thread 70284: XXXX 1745637532917, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533015 XXXX 1745637533015, Thread 70284: XXXX 1745637533015, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533016 XXXX 1745637533016, Thread 70284: XXXX 1745637533016, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533117 XXXX 1745637533117, Thread 70284: XXXX 1745637533117, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533118 XXXX 1745637533118, Thread 70284: XXXX 1745637533118, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533217 XXXX 1745637533217, Thread 70284: XXXX 1745637533217, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533218 XXXX 1745637533218, Thread 70284: XXXX 1745637533218, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533319 XXXX 1745637533319, Thread 70284: XXXX 1745637533319, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533321 XXXX 1745637533321, Thread 70284: XXXX 1745637533321, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533420 XXXX 1745637533420, Thread 70284: XXXX 1745637533420, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533421 XXXX 1745637533421, Thread 70284: XXXX 1745637533421, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533520 XXXX 1745637533520, Thread 70284: XXXX 1745637533520, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533521 XXXX 1745637533521, Thread 70284: XXXX 1745637533521, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533621 XXXX 1745637533621, Thread 70284: XXXX 1745637533621, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533622 XXXX 1745637533622, Thread 70284: XXXX 1745637533622, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533721 XXXX 1745637533721, Thread 70284: XXXX 1745637533721, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533722 XXXX 1745637533722, Thread 70284: XXXX 1745637533722, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533821 XXXX 1745637533821, Thread 70284: XXXX 1745637533821, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533823 XXXX 1745637533823, Thread 70284: XXXX 1745637533823, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637533921 XXXX 1745637533921, Thread 70284: XXXX 1745637533921, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637533923 XXXX 1745637533923, Thread 70284: XXXX 1745637533923, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534021 XXXX 1745637534021, Thread 70284: XXXX 1745637534021, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534022 XXXX 1745637534022, Thread 70284: XXXX 1745637534022, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534121 XXXX 1745637534121, Thread 70284: XXXX 1745637534121, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534122 XXXX 1745637534122, Thread 70284: XXXX 1745637534122, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534222 XXXX 1745637534222, Thread 70284: XXXX 1745637534222, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534223 XXXX 1745637534223, Thread 70284: XXXX 1745637534223, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534322 XXXX 1745637534322, Thread 70284: XXXX 1745637534322, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534323 XXXX 1745637534323, Thread 70284: XXXX 1745637534323, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534423 XXXX 1745637534423, Thread 70284: XXXX 1745637534423, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534425 XXXX 1745637534425, Thread 70284: XXXX 1745637534425, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534524 XXXX 1745637534524, Thread 70284: XXXX 1745637534524, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534526 XXXX 1745637534526, Thread 70284: XXXX 1745637534526, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534623 XXXX 1745637534623, Thread 70284: XXXX 1745637534623, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534623 XXXX 1745637534623, Thread 70284: XXXX 1745637534623, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534723 XXXX 1745637534723, Thread 70284: XXXX 1745637534723, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534724 XXXX 1745637534724, Thread 70284: XXXX 1745637534724, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534824 XXXX 1745637534824, Thread 70284: XXXX 1745637534824, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534826 XXXX 1745637534826, Thread 70284: XXXX 1745637534826, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637534924 XXXX 1745637534924, Thread 70284: XXXX 1745637534924, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637534926 XXXX 1745637534926, Thread 70284: XXXX 1745637534926, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535026 XXXX 1745637535026, Thread 70284: XXXX 1745637535026, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535027 XXXX 1745637535027, Thread 70284: XXXX 1745637535027, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535126 XXXX 1745637535126, Thread 70284: XXXX 1745637535126, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535126 XXXX 1745637535126, Thread 70284: XXXX 1745637535126, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535227 XXXX 1745637535227, Thread 70284: XXXX 1745637535227, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535228 XXXX 1745637535228, Thread 70284: XXXX 1745637535228, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535328 XXXX 1745637535328, Thread 70284: XXXX 1745637535328, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535329 XXXX 1745637535329, Thread 70284: XXXX 1745637535329, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535428 XXXX 1745637535428, Thread 70284: XXXX 1745637535428, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535429 XXXX 1745637535429, Thread 70284: XXXX 1745637535429, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535530 XXXX 1745637535530, Thread 70284: XXXX 1745637535530, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535532 XXXX 1745637535532, Thread 70284: XXXX 1745637535532, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535630 XXXX 1745637535630, Thread 70284: XXXX 1745637535630, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535631 XXXX 1745637535631, Thread 70284: XXXX 1745637535631, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535731 XXXX 1745637535731, Thread 70284: XXXX 1745637535731, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535733 XXXX 1745637535733, Thread 70284: XXXX 1745637535733, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535831 XXXX 1745637535831, Thread 70284: XXXX 1745637535831, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535832 XXXX 1745637535832, Thread 70284: XXXX 1745637535832, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637535933 XXXX 1745637535933, Thread 70284: XXXX 1745637535933, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637535935 XXXX 1745637535935, Thread 70284: XXXX 1745637535935, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536035 XXXX 1745637536035, Thread 70284: XXXX 1745637536035, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536037 XXXX 1745637536037, Thread 70284: XXXX 1745637536037, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536136 XXXX 1745637536136, Thread 70284: XXXX 1745637536136, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536137 XXXX 1745637536137, Thread 70284: XXXX 1745637536137, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536237 XXXX 1745637536237, Thread 70284: XXXX 1745637536237, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536238 XXXX 1745637536238, Thread 70284: XXXX 1745637536238, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536337 XXXX 1745637536337, Thread 70284: XXXX 1745637536337, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536339 XXXX 1745637536339, Thread 70284: XXXX 1745637536339, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536438 XXXX 1745637536438, Thread 70284: XXXX 1745637536438, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536439 XXXX 1745637536439, Thread 70284: XXXX 1745637536439, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536539 XXXX 1745637536539, Thread 70284: XXXX 1745637536539, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536540 XXXX 1745637536540, Thread 70284: XXXX 1745637536540, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536639 XXXX 1745637536639, Thread 70284: XXXX 1745637536639, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536640 XXXX 1745637536640, Thread 70284: XXXX 1745637536640, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536741 XXXX 1745637536741, Thread 70284: XXXX 1745637536741, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536742 XXXX 1745637536742, Thread 70284: XXXX 1745637536742, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536841 XXXX 1745637536841, Thread 70284: XXXX 1745637536841, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536843 XXXX 1745637536843, Thread 70284: XXXX 1745637536843, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637536942 XXXX 1745637536942, Thread 70284: XXXX 1745637536942, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637536943 XXXX 1745637536943, Thread 70284: XXXX 1745637536943, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537044 XXXX 1745637537044, Thread 70284: XXXX 1745637537044, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537046 XXXX 1745637537046, Thread 70284: XXXX 1745637537046, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537146 XXXX 1745637537146, Thread 70284: XXXX 1745637537146, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537147 XXXX 1745637537147, Thread 70284: XXXX 1745637537147, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537245 XXXX 1745637537245, Thread 70284: XXXX 1745637537245, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537246 XXXX 1745637537246, Thread 70284: XXXX 1745637537246, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537346 XXXX 1745637537346, Thread 70284: XXXX 1745637537346, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537347 XXXX 1745637537347, Thread 70284: XXXX 1745637537347, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537446 XXXX 1745637537446, Thread 70284: XXXX 1745637537446, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537447 XXXX 1745637537447, Thread 70284: XXXX 1745637537447, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537547 XXXX 1745637537547, Thread 70284: XXXX 1745637537547, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537549 XXXX 1745637537549, Thread 70284: XXXX 1745637537549, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537649 XXXX 1745637537649, Thread 70284: XXXX 1745637537649, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537649 XXXX 1745637537649, Thread 70284: XXXX 1745637537649, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537750 XXXX 1745637537750, Thread 70284: XXXX 1745637537750, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537751 XXXX 1745637537751, Thread 70284: XXXX 1745637537751, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537851 XXXX 1745637537851, Thread 70284: XXXX 1745637537851, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537852 XXXX 1745637537852, Thread 70284: XXXX 1745637537852, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637537953 XXXX 1745637537953, Thread 70284: XXXX 1745637537953, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637537954 XXXX 1745637537954, Thread 70284: XXXX 1745637537954, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538053 XXXX 1745637538053, Thread 70284: XXXX 1745637538053, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538055 XXXX 1745637538055, Thread 70284: XXXX 1745637538055, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538154 XXXX 1745637538154, Thread 70284: XXXX 1745637538154, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538156 XXXX 1745637538156, Thread 70284: XXXX 1745637538156, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538254 XXXX 1745637538254, Thread 70284: XXXX 1745637538254, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538255 XXXX 1745637538255, Thread 70284: XXXX 1745637538255, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538357 XXXX 1745637538357, Thread 70284: XXXX 1745637538357, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538357 XXXX 1745637538357, Thread 70284: XXXX 1745637538357, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538457 XXXX 1745637538457, Thread 70284: XXXX 1745637538457, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538459 XXXX 1745637538459, Thread 70284: XXXX 1745637538459, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538557 XXXX 1745637538557, Thread 70284: XXXX 1745637538557, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538559 XXXX 1745637538559, Thread 70284: XXXX 1745637538559, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538659 XXXX 1745637538659, Thread 70284: XXXX 1745637538659, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538661 XXXX 1745637538661, Thread 70284: XXXX 1745637538661, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538760 XXXX 1745637538760, Thread 70284: XXXX 1745637538760, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538762 XXXX 1745637538762, Thread 70284: XXXX 1745637538762, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538861 XXXX 1745637538861, Thread 70284: XXXX 1745637538861, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538863 XXXX 1745637538863, Thread 70284: XXXX 1745637538863, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637538962 XXXX 1745637538962, Thread 70284: XXXX 1745637538962, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637538963 XXXX 1745637538963, Thread 70284: XXXX 1745637538963, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539063 XXXX 1745637539063, Thread 70284: XXXX 1745637539063, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539064 XXXX 1745637539064, Thread 70284: XXXX 1745637539064, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539163 XXXX 1745637539163, Thread 70284: XXXX 1745637539163, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539164 XXXX 1745637539164, Thread 70284: XXXX 1745637539164, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539264 XXXX 1745637539264, Thread 70284: XXXX 1745637539264, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539266 XXXX 1745637539266, Thread 70284: XXXX 1745637539266, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539364 XXXX 1745637539364, Thread 70284: XXXX 1745637539364, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539366 XXXX 1745637539366, Thread 70284: XXXX 1745637539366, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539467 XXXX 1745637539467, Thread 70284: XXXX 1745637539467, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539468 XXXX 1745637539468, Thread 70284: XXXX 1745637539468, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539566 XXXX 1745637539566, Thread 70284: XXXX 1745637539566, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539568 XXXX 1745637539568, Thread 70284: XXXX 1745637539568, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539666 XXXX 1745637539666, Thread 70284: XXXX 1745637539666, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539667 XXXX 1745637539667, Thread 70284: XXXX 1745637539667, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539766 XXXX 1745637539766, Thread 70284: XXXX 1745637539766, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539767 XXXX 1745637539767, Thread 70284: XXXX 1745637539767, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539868 XXXX 1745637539868, Thread 70284: XXXX 1745637539868, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539869 XXXX 1745637539869, Thread 70284: XXXX 1745637539869, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637539967 XXXX 1745637539967, Thread 70284: XXXX 1745637539967, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637539968 XXXX 1745637539968, Thread 70284: XXXX 1745637539968, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540068 XXXX 1745637540068, Thread 70284: XXXX 1745637540068, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540070 XXXX 1745637540070, Thread 70284: XXXX 1745637540070, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540168 XXXX 1745637540168, Thread 70284: XXXX 1745637540168, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540169 XXXX 1745637540169, Thread 70284: XXXX 1745637540169, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540268 XXXX 1745637540268, Thread 70284: XXXX 1745637540268, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540270 XXXX 1745637540270, Thread 70284: XXXX 1745637540270, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540368 XXXX 1745637540368, Thread 70284: XXXX 1745637540368, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540369 XXXX 1745637540369, Thread 70284: XXXX 1745637540369, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540470 XXXX 1745637540470, Thread 70284: XXXX 1745637540470, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540471 XXXX 1745637540471, Thread 70284: XXXX 1745637540471, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540571 XXXX 1745637540571, Thread 70284: XXXX 1745637540570, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540572 XXXX 1745637540572, Thread 70284: XXXX 1745637540572, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540671 XXXX 1745637540671, Thread 70284: XXXX 1745637540671, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540672 XXXX 1745637540672, Thread 70284: XXXX 1745637540672, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540773 XXXX 1745637540773, Thread 70284: XXXX 1745637540773, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540774 XXXX 1745637540774, Thread 70284: XXXX 1745637540774, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540873 XXXX 1745637540873, Thread 70284: XXXX 1745637540873, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540875 XXXX 1745637540875, Thread 70284: XXXX 1745637540875, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637540973 XXXX 1745637540973, Thread 70284: XXXX 1745637540973, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637540975 XXXX 1745637540975, Thread 70284: XXXX 1745637540975, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541074 XXXX 1745637541074, Thread 70284: XXXX 1745637541074, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541075 XXXX 1745637541075, Thread 70284: XXXX 1745637541075, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541177 XXXX 1745637541176, Thread 70284: XXXX 1745637541176, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541178 XXXX 1745637541178, Thread 70284: XXXX 1745637541178, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541276 XXXX 1745637541276, Thread 70284: XXXX 1745637541276, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541276 XXXX 1745637541276, Thread 70284: XXXX 1745637541276, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541377 XXXX 1745637541377, Thread 70284: XXXX 1745637541377, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541379 XXXX 1745637541379, Thread 70284: XXXX 1745637541379, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541479 XXXX 1745637541479, Thread 70284: XXXX 1745637541479, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541481 XXXX 1745637541481, Thread 70284: XXXX 1745637541481, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541579 XXXX 1745637541579, Thread 70284: XXXX 1745637541579, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541580 XXXX 1745637541580, Thread 70284: XXXX 1745637541580, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541680 XXXX 1745637541680, Thread 70284: XXXX 1745637541680, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541681 XXXX 1745637541681, Thread 70284: XXXX 1745637541681, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541781 XXXX 1745637541781, Thread 70284: XXXX 1745637541781, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541783 XXXX 1745637541783, Thread 70284: XXXX 1745637541783, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541881 XXXX 1745637541881, Thread 70284: XXXX 1745637541881, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541882 XXXX 1745637541882, Thread 70284: XXXX 1745637541882, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637541981 XXXX 1745637541981, Thread 70284: XXXX 1745637541981, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637541982 XXXX 1745637541982, Thread 70284: XXXX 1745637541982, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542082 XXXX 1745637542082, Thread 70284: XXXX 1745637542082, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542083 XXXX 1745637542083, Thread 70284: XXXX 1745637542083, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542183 XXXX 1745637542183, Thread 70284: XXXX 1745637542183, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542184 XXXX 1745637542184, Thread 70284: XXXX 1745637542184, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542284 XXXX 1745637542284, Thread 70284: XXXX 1745637542284, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542285 XXXX 1745637542285, Thread 70284: XXXX 1745637542285, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542385 XXXX 1745637542385, Thread 70284: XXXX 1745637542385, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542385 XXXX 1745637542385, Thread 70284: XXXX 1745637542385, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542486 XXXX 1745637542486, Thread 70284: XXXX 1745637542486, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542487 XXXX 1745637542487, Thread 70284: XXXX 1745637542487, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542586 XXXX 1745637542586, Thread 70284: XXXX 1745637542586, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542587 XXXX 1745637542587, Thread 70284: XXXX 1745637542587, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542688 XXXX 1745637542688, Thread 70284: XXXX 1745637542688, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542689 XXXX 1745637542689, Thread 70284: XXXX 1745637542689, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542789 XXXX 1745637542789, Thread 70284: XXXX 1745637542789, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542790 XXXX 1745637542790, Thread 70284: XXXX 1745637542790, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542890 XXXX 1745637542890, Thread 70284: XXXX 1745637542890, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542892 XXXX 1745637542892, Thread 70284: XXXX 1745637542892, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637542990 XXXX 1745637542990, Thread 70284: XXXX 1745637542990, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637542991 XXXX 1745637542991, Thread 70284: XXXX 1745637542991, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543090 XXXX 1745637543090, Thread 70284: XXXX 1745637543090, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543091 XXXX 1745637543091, Thread 70284: XXXX 1745637543091, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543191 XXXX 1745637543191, Thread 70284: XXXX 1745637543191, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543191 XXXX 1745637543191, Thread 70284: XXXX 1745637543191, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543291 XXXX 1745637543291, Thread 70284: XXXX 1745637543291, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543291 XXXX 1745637543291, Thread 70284: XXXX 1745637543291, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543393 XXXX 1745637543393, Thread 70284: XXXX 1745637543393, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543394 XXXX 1745637543394, Thread 70284: XXXX 1745637543394, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543494 XXXX 1745637543494, Thread 70284: XXXX 1745637543494, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543496 XXXX 1745637543496, Thread 70284: XXXX 1745637543496, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543594 XXXX 1745637543594, Thread 70284: XXXX 1745637543594, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543596 XXXX 1745637543596, Thread 70284: XXXX 1745637543596, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543694 XXXX 1745637543694, Thread 70284: XXXX 1745637543694, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543695 XXXX 1745637543695, Thread 70284: XXXX 1745637543695, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543795 XXXX 1745637543795, Thread 70284: XXXX 1745637543795, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543796 XXXX 1745637543796, Thread 70284: XXXX 1745637543796, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543895 XXXX 1745637543895, Thread 70284: XXXX 1745637543895, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543896 XXXX 1745637543896, Thread 70284: XXXX 1745637543896, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637543995 XXXX 1745637543995, Thread 70284: XXXX 1745637543995, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637543997 XXXX 1745637543997, Thread 70284: XXXX 1745637543997, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544095 XXXX 1745637544095, Thread 70284: XXXX 1745637544095, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544096 XXXX 1745637544096, Thread 70284: XXXX 1745637544096, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544197 XXXX 1745637544197, Thread 70284: XXXX 1745637544197, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544199 XXXX 1745637544199, Thread 70284: XXXX 1745637544199, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544297 XXXX 1745637544297, Thread 70284: XXXX 1745637544297, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544298 XXXX 1745637544298, Thread 70284: XXXX 1745637544298, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544398 XXXX 1745637544398, Thread 70284: XXXX 1745637544398, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544399 XXXX 1745637544399, Thread 70284: XXXX 1745637544399, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544499 XXXX 1745637544499, Thread 70284: XXXX 1745637544499, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544501 XXXX 1745637544501, Thread 70284: XXXX 1745637544501, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544600 XXXX 1745637544600, Thread 70284: XXXX 1745637544600, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544601 XXXX 1745637544601, Thread 70284: XXXX 1745637544601, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544700 XXXX 1745637544700, Thread 70284: XXXX 1745637544700, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544701 XXXX 1745637544701, Thread 70284: XXXX 1745637544701, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544801 XXXX 1745637544801, Thread 70284: XXXX 1745637544801, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544803 XXXX 1745637544803, Thread 70284: XXXX 1745637544803, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637544902 XXXX 1745637544902, Thread 70284: XXXX 1745637544902, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637544904 XXXX 1745637544904, Thread 70284: XXXX 1745637544904, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545003 XXXX 1745637545003, Thread 70284: XXXX 1745637545003, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545004 XXXX 1745637545004, Thread 70284: XXXX 1745637545004, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545103 XXXX 1745637545103, Thread 70284: XXXX 1745637545103, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545104 XXXX 1745637545104, Thread 70284: XXXX 1745637545104, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545204 XXXX 1745637545204, Thread 70284: XXXX 1745637545204, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545205 XXXX 1745637545205, Thread 70284: XXXX 1745637545205, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545304 XXXX 1745637545304, Thread 70284: XXXX 1745637545304, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545304 XXXX 1745637545304, Thread 70284: XXXX 1745637545304, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545404 XXXX 1745637545404, Thread 70284: XXXX 1745637545404, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545407 XXXX 1745637545407, Thread 70284: XXXX 1745637545407, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545505 XXXX 1745637545505, Thread 70284: XXXX 1745637545505, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545507 XXXX 1745637545507, Thread 70284: XXXX 1745637545507, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545606 XXXX 1745637545606, Thread 70284: XXXX 1745637545606, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545607 XXXX 1745637545607, Thread 70284: XXXX 1745637545607, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545706 XXXX 1745637545706, Thread 70284: XXXX 1745637545706, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545708 XXXX 1745637545708, Thread 70284: XXXX 1745637545708, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545807 XXXX 1745637545807, Thread 70284: XXXX 1745637545807, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545809 XXXX 1745637545809, Thread 70284: XXXX 1745637545809, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637545907 XXXX 1745637545907, Thread 70284: XXXX 1745637545907, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637545909 XXXX 1745637545909, Thread 70284: XXXX 1745637545909, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546007 XXXX 1745637546007, Thread 70284: XXXX 1745637546007, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546009 XXXX 1745637546009, Thread 70284: XXXX 1745637546009, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546107 XXXX 1745637546107, Thread 70284: XXXX 1745637546107, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546107 XXXX 1745637546107, Thread 70284: XXXX 1745637546107, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546207 XXXX 1745637546207, Thread 70284: XXXX 1745637546207, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546209 XXXX 1745637546209, Thread 70284: XXXX 1745637546208, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546307 XXXX 1745637546307, Thread 70284: XXXX 1745637546307, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546309 XXXX 1745637546309, Thread 70284: XXXX 1745637546309, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546408 XXXX 1745637546408, Thread 70284: XXXX 1745637546408, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546410 XXXX 1745637546410, Thread 70284: XXXX 1745637546410, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546509 XXXX 1745637546509, Thread 70284: XXXX 1745637546509, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546510 XXXX 1745637546510, Thread 70284: XXXX 1745637546510, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546610 XXXX 1745637546610, Thread 70284: XXXX 1745637546610, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546610 XXXX 1745637546610, Thread 70284: XXXX 1745637546610, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546711 XXXX 1745637546711, Thread 70284: XXXX 1745637546711, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546712 XXXX 1745637546712, Thread 70284: XXXX 1745637546712, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546811 XXXX 1745637546811, Thread 70284: XXXX 1745637546811, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546814 XXXX 1745637546814, Thread 70284: XXXX 1745637546814, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637546911 XXXX 1745637546911, Thread 70284: XXXX 1745637546911, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637546913 XXXX 1745637546913, Thread 70284: XXXX 1745637546913, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547011 XXXX 1745637547011, Thread 70284: XXXX 1745637547011, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547013 XXXX 1745637547013, Thread 70284: XXXX 1745637547013, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547111 XXXX 1745637547111, Thread 70284: XXXX 1745637547111, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547112 XXXX 1745637547112, Thread 70284: XXXX 1745637547112, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547212 XXXX 1745637547212, Thread 70284: XXXX 1745637547212, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547213 XXXX 1745637547213, Thread 70284: XXXX 1745637547213, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547312 XXXX 1745637547312, Thread 70284: XXXX 1745637547312, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547314 XXXX 1745637547314, Thread 70284: XXXX 1745637547314, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547413 XXXX 1745637547413, Thread 70284: XXXX 1745637547413, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547414 XXXX 1745637547414, Thread 70284: XXXX 1745637547414, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547514 XXXX 1745637547514, Thread 70284: XXXX 1745637547514, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547516 XXXX 1745637547516, Thread 70284: XXXX 1745637547516, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547616 XXXX 1745637547616, Thread 70284: XXXX 1745637547616, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547616 XXXX 1745637547616, Thread 70284: XXXX 1745637547616, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547718 XXXX 1745637547718, Thread 70284: XXXX 1745637547718, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547718 XXXX 1745637547718, Thread 70284: XXXX 1745637547718, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547818 XXXX 1745637547818, Thread 70284: XXXX 1745637547818, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547819 XXXX 1745637547819, Thread 70284: XXXX 1745637547819, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637547919 XXXX 1745637547919, Thread 70284: XXXX 1745637547919, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637547921 XXXX 1745637547921, Thread 70284: XXXX 1745637547921, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548021 XXXX 1745637548021, Thread 70284: XXXX 1745637548021, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548023 XXXX 1745637548023, Thread 70284: XXXX 1745637548023, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548123 XXXX 1745637548123, Thread 70284: XXXX 1745637548123, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548124 XXXX 1745637548124, Thread 70284: XXXX 1745637548124, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548224 XXXX 1745637548224, Thread 70284: XXXX 1745637548224, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548226 XXXX 1745637548226, Thread 70284: XXXX 1745637548226, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548324 XXXX 1745637548324, Thread 70284: XXXX 1745637548324, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548326 XXXX 1745637548326, Thread 70284: XXXX 1745637548326, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548424 XXXX 1745637548424, Thread 70284: XXXX 1745637548424, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548426 XXXX 1745637548426, Thread 70284: XXXX 1745637548426, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548524 XXXX 1745637548524, Thread 70284: XXXX 1745637548524, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548526 XXXX 1745637548526, Thread 70284: XXXX 1745637548526, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548624 XXXX 1745637548624, Thread 70284: XXXX 1745637548624, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548626 XXXX 1745637548626, Thread 70284: XXXX 1745637548626, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548724 XXXX 1745637548724, Thread 70284: XXXX 1745637548724, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548726 XXXX 1745637548726, Thread 70284: XXXX 1745637548726, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548825 XXXX 1745637548825, Thread 70284: XXXX 1745637548825, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548826 XXXX 1745637548826, Thread 70284: XXXX 1745637548826, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637548926 XXXX 1745637548926, Thread 70284: XXXX 1745637548926, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637548927 XXXX 1745637548927, Thread 70284: XXXX 1745637548927, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549026 XXXX 1745637549026, Thread 70284: XXXX 1745637549026, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549029 XXXX 1745637549029, Thread 70284: XXXX 1745637549029, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549128 XXXX 1745637549128, Thread 70284: XXXX 1745637549128, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549129 XXXX 1745637549129, Thread 70284: XXXX 1745637549129, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549228 XXXX 1745637549228, Thread 70284: XXXX 1745637549228, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549230 XXXX 1745637549230, Thread 70284: XXXX 1745637549230, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549330 XXXX 1745637549330, Thread 70284: XXXX 1745637549330, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549331 XXXX 1745637549331, Thread 70284: XXXX 1745637549331, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549431 XXXX 1745637549431, Thread 70284: XXXX 1745637549431, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549433 XXXX 1745637549433, Thread 70284: XXXX 1745637549433, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549532 XXXX 1745637549532, Thread 70284: XXXX 1745637549531, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549532 XXXX 1745637549532, Thread 70284: XXXX 1745637549532, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549631 XXXX 1745637549631, Thread 70284: XXXX 1745637549631, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549632 XXXX 1745637549632, Thread 70284: XXXX 1745637549632, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549731 XXXX 1745637549731, Thread 70284: XXXX 1745637549731, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549734 XXXX 1745637549734, Thread 70284: XXXX 1745637549734, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549832 XXXX 1745637549832, Thread 70284: XXXX 1745637549832, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549833 XXXX 1745637549833, Thread 70284: XXXX 1745637549833, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637549932 XXXX 1745637549932, Thread 70284: XXXX 1745637549932, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637549933 XXXX 1745637549933, Thread 70284: XXXX 1745637549933, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550035 XXXX 1745637550035, Thread 70284: XXXX 1745637550035, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550036 XXXX 1745637550036, Thread 70284: XXXX 1745637550036, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550134 XXXX 1745637550134, Thread 70284: XXXX 1745637550134, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550135 XXXX 1745637550135, Thread 70284: XXXX 1745637550135, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550234 XXXX 1745637550234, Thread 70284: XXXX 1745637550234, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550235 XXXX 1745637550235, Thread 70284: XXXX 1745637550235, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550336 XXXX 1745637550336, Thread 70284: XXXX 1745637550336, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550337 XXXX 1745637550337, Thread 70284: XXXX 1745637550337, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550437 XXXX 1745637550437, Thread 70284: XXXX 1745637550436, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550438 XXXX 1745637550438, Thread 70284: XXXX 1745637550438, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550537 XXXX 1745637550537, Thread 70284: XXXX 1745637550537, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550540 XXXX 1745637550540, Thread 70284: XXXX 1745637550540, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550637 XXXX 1745637550637, Thread 70284: XXXX 1745637550637, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550638 XXXX 1745637550638, Thread 70284: XXXX 1745637550638, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550737 XXXX 1745637550737, Thread 70284: XXXX 1745637550737, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550739 XXXX 1745637550739, Thread 70284: XXXX 1745637550739, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550840 XXXX 1745637550840, Thread 70284: XXXX 1745637550840, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550841 XXXX 1745637550841, Thread 70284: XXXX 1745637550841, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637550938 XXXX 1745637550938, Thread 70284: XXXX 1745637550938, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637550940 XXXX 1745637550940, Thread 70284: XXXX 1745637550940, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551038 XXXX 1745637551038, Thread 70284: XXXX 1745637551038, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551040 XXXX 1745637551040, Thread 70284: XXXX 1745637551040, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551139 XXXX 1745637551139, Thread 70284: XXXX 1745637551139, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551141 XXXX 1745637551141, Thread 70284: XXXX 1745637551141, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551241 XXXX 1745637551241, Thread 70284: XXXX 1745637551241, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551242 XXXX 1745637551242, Thread 70284: XXXX 1745637551242, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551341 XXXX 1745637551341, Thread 70284: XXXX 1745637551341, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551342 XXXX 1745637551342, Thread 70284: XXXX 1745637551342, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551442 XXXX 1745637551442, Thread 70284: XXXX 1745637551442, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551443 XXXX 1745637551443, Thread 70284: XXXX 1745637551443, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551544 XXXX 1745637551544, Thread 70284: XXXX 1745637551544, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551545 XXXX 1745637551545, Thread 70284: XXXX 1745637551545, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551646 XXXX 1745637551646, Thread 70284: XXXX 1745637551646, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551647 XXXX 1745637551647, Thread 70284: XXXX 1745637551647, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551748 XXXX 1745637551748, Thread 70284: XXXX 1745637551748, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551750 XXXX 1745637551750, Thread 70284: XXXX 1745637551750, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551848 XXXX 1745637551848, Thread 70284: XXXX 1745637551848, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551850 XXXX 1745637551850, Thread 70284: XXXX 1745637551850, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637551949 XXXX 1745637551949, Thread 70284: XXXX 1745637551949, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637551951 XXXX 1745637551951, Thread 70284: XXXX 1745637551951, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552049 XXXX 1745637552049, Thread 70284: XXXX 1745637552049, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552050 XXXX 1745637552050, Thread 70284: XXXX 1745637552050, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552151 XXXX 1745637552151, Thread 70284: XXXX 1745637552151, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552152 XXXX 1745637552152, Thread 70284: XXXX 1745637552152, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552253 XXXX 1745637552253, Thread 70284: XXXX 1745637552253, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552254 XXXX 1745637552254, Thread 70284: XXXX 1745637552254, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552354 XXXX 1745637552354, Thread 70284: XXXX 1745637552354, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552356 XXXX 1745637552356, Thread 70284: XXXX 1745637552356, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552455 XXXX 1745637552455, Thread 70284: XXXX 1745637552455, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552457 XXXX 1745637552457, Thread 70284: XXXX 1745637552457, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552554 XXXX 1745637552554, Thread 70284: XXXX 1745637552554, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552557 XXXX 1745637552557, Thread 70284: XXXX 1745637552557, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552654 XXXX 1745637552654, Thread 70284: XXXX 1745637552654, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552656 XXXX 1745637552656, Thread 70284: XXXX 1745637552656, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552755 XXXX 1745637552755, Thread 70284: XXXX 1745637552755, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552757 XXXX 1745637552757, Thread 70284: XXXX 1745637552757, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552855 XXXX 1745637552855, Thread 70284: XXXX 1745637552855, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552856 XXXX 1745637552856, Thread 70284: XXXX 1745637552856, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637552956 XXXX 1745637552956, Thread 70284: XXXX 1745637552956, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637552957 XXXX 1745637552957, Thread 70284: XXXX 1745637552957, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553055 XXXX 1745637553055, Thread 70284: XXXX 1745637553055, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553058 XXXX 1745637553058, Thread 70284: XXXX 1745637553058, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553158 XXXX 1745637553158, Thread 70284: XXXX 1745637553158, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553159 XXXX 1745637553159, Thread 70284: XXXX 1745637553159, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553257 XXXX 1745637553257, Thread 70284: XXXX 1745637553257, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553258 XXXX 1745637553258, Thread 70284: XXXX 1745637553258, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553357 XXXX 1745637553357, Thread 70284: XXXX 1745637553357, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553359 XXXX 1745637553359, Thread 70284: XXXX 1745637553359, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553457 XXXX 1745637553457, Thread 70284: XXXX 1745637553457, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553459 XXXX 1745637553459, Thread 70284: XXXX 1745637553459, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553558 XXXX 1745637553558, Thread 70284: XXXX 1745637553558, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553560 XXXX 1745637553560, Thread 70284: XXXX 1745637553560, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553659 XXXX 1745637553659, Thread 70284: XXXX 1745637553659, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553659 XXXX 1745637553659, Thread 70284: XXXX 1745637553659, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553760 XXXX 1745637553760, Thread 70284: XXXX 1745637553760, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553762 XXXX 1745637553762, Thread 70284: XXXX 1745637553762, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553860 XXXX 1745637553860, Thread 70284: XXXX 1745637553860, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553861 XXXX 1745637553861, Thread 70284: XXXX 1745637553861, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637553961 XXXX 1745637553961, Thread 70284: XXXX 1745637553961, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637553962 XXXX 1745637553962, Thread 70284: XXXX 1745637553962, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554062 XXXX 1745637554062, Thread 70284: XXXX 1745637554062, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554063 XXXX 1745637554063, Thread 70284: XXXX 1745637554063, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554165 XXXX 1745637554165, Thread 70284: XXXX 1745637554164, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554166 XXXX 1745637554166, Thread 70284: XXXX 1745637554166, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554264 XXXX 1745637554264, Thread 70284: XXXX 1745637554264, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554265 XXXX 1745637554265, Thread 70284: XXXX 1745637554265, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554366 XXXX 1745637554366, Thread 70284: XXXX 1745637554366, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554366 XXXX 1745637554366, Thread 70284: XXXX 1745637554366, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554465 XXXX 1745637554465, Thread 70284: XXXX 1745637554465, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554467 XXXX 1745637554467, Thread 70284: XXXX 1745637554467, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554565 XXXX 1745637554565, Thread 70284: XXXX 1745637554565, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554566 XXXX 1745637554566, Thread 70284: XXXX 1745637554566, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554666 XXXX 1745637554666, Thread 70284: XXXX 1745637554666, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554667 XXXX 1745637554667, Thread 70284: XXXX 1745637554667, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554766 XXXX 1745637554766, Thread 70284: XXXX 1745637554766, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554767 XXXX 1745637554767, Thread 70284: XXXX 1745637554767, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554867 XXXX 1745637554867, Thread 70284: XXXX 1745637554867, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554869 XXXX 1745637554869, Thread 70284: XXXX 1745637554869, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637554968 XXXX 1745637554968, Thread 70284: XXXX 1745637554968, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637554969 XXXX 1745637554969, Thread 70284: XXXX 1745637554969, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555068 XXXX 1745637555068, Thread 70284: XXXX 1745637555068, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555070 XXXX 1745637555070, Thread 70284: XXXX 1745637555070, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555169 XXXX 1745637555169, Thread 70284: XXXX 1745637555169, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555170 XXXX 1745637555170, Thread 70284: XXXX 1745637555170, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555269 XXXX 1745637555269, Thread 70284: XXXX 1745637555269, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555269 XXXX 1745637555269, Thread 70284: XXXX 1745637555269, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555371 XXXX 1745637555371, Thread 70284: XXXX 1745637555371, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555372 XXXX 1745637555372, Thread 70284: XXXX 1745637555372, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555472 XXXX 1745637555472, Thread 70284: XXXX 1745637555472, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555473 XXXX 1745637555473, Thread 70284: XXXX 1745637555473, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555571 XXXX 1745637555571, Thread 70284: XXXX 1745637555571, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555573 XXXX 1745637555573, Thread 70284: XXXX 1745637555573, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555672 XXXX 1745637555672, Thread 70284: XXXX 1745637555672, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555673 XXXX 1745637555673, Thread 70284: XXXX 1745637555673, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555772 XXXX 1745637555772, Thread 70284: XXXX 1745637555772, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555773 XXXX 1745637555773, Thread 70284: XXXX 1745637555773, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555874 XXXX 1745637555874, Thread 70284: XXXX 1745637555874, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555875 XXXX 1745637555875, Thread 70284: XXXX 1745637555875, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637555974 XXXX 1745637555974, Thread 70284: XXXX 1745637555974, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637555975 XXXX 1745637555975, Thread 70284: XXXX 1745637555975, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556075 XXXX 1745637556075, Thread 70284: XXXX 1745637556075, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556075 XXXX 1745637556075, Thread 70284: XXXX 1745637556075, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556176 XXXX 1745637556176, Thread 70284: XXXX 1745637556176, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556177 XXXX 1745637556177, Thread 70284: XXXX 1745637556177, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556276 XXXX 1745637556276, Thread 70284: XXXX 1745637556276, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556277 XXXX 1745637556277, Thread 70284: XXXX 1745637556277, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556377 XXXX 1745637556377, Thread 70284: XXXX 1745637556377, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556378 XXXX 1745637556378, Thread 70284: XXXX 1745637556378, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556477 XXXX 1745637556477, Thread 70284: XXXX 1745637556477, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556478 XXXX 1745637556478, Thread 70284: XXXX 1745637556478, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556578 XXXX 1745637556578, Thread 70284: XXXX 1745637556578, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556579 XXXX 1745637556579, Thread 70284: XXXX 1745637556579, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556680 XXXX 1745637556680, Thread 70284: XXXX 1745637556680, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556681 XXXX 1745637556681, Thread 70284: XXXX 1745637556681, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556780 XXXX 1745637556780, Thread 70284: XXXX 1745637556780, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556781 XXXX 1745637556781, Thread 70284: XXXX 1745637556781, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556881 XXXX 1745637556881, Thread 70284: XXXX 1745637556881, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556882 XXXX 1745637556882, Thread 70284: XXXX 1745637556882, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637556982 XXXX 1745637556982, Thread 70284: XXXX 1745637556982, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637556984 XXXX 1745637556984, Thread 70284: XXXX 1745637556984, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557084 XXXX 1745637557084, Thread 70284: XXXX 1745637557084, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557085 XXXX 1745637557085, Thread 70284: XXXX 1745637557085, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557185 XXXX 1745637557185, Thread 70284: XXXX 1745637557185, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557186 XXXX 1745637557186, Thread 70284: XXXX 1745637557186, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557285 XXXX 1745637557285, Thread 70284: XXXX 1745637557285, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557286 XXXX 1745637557286, Thread 70284: XXXX 1745637557286, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557386 XXXX 1745637557386, Thread 70284: XXXX 1745637557386, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557388 XXXX 1745637557388, Thread 70284: XXXX 1745637557388, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557487 XXXX 1745637557487, Thread 70284: XXXX 1745637557487, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557489 XXXX 1745637557489, Thread 70284: XXXX 1745637557489, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557588 XXXX 1745637557588, Thread 70284: XXXX 1745637557588, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557589 XXXX 1745637557589, Thread 70284: XXXX 1745637557589, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557690 XXXX 1745637557690, Thread 70284: XXXX 1745637557690, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557691 XXXX 1745637557691, Thread 70284: XXXX 1745637557691, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557791 XXXX 1745637557791, Thread 70284: XXXX 1745637557791, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557792 XXXX 1745637557792, Thread 70284: XXXX 1745637557792, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557892 XXXX 1745637557892, Thread 70284: XXXX 1745637557892, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557893 XXXX 1745637557893, Thread 70284: XXXX 1745637557893, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637557991 XXXX 1745637557991, Thread 70284: XXXX 1745637557991, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637557993 XXXX 1745637557993, Thread 70284: XXXX 1745637557993, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558093 XXXX 1745637558093, Thread 70284: XXXX 1745637558093, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558094 XXXX 1745637558094, Thread 70284: XXXX 1745637558094, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558196 XXXX 1745637558196, Thread 70284: XXXX 1745637558196, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558197 XXXX 1745637558197, Thread 70284: XXXX 1745637558197, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558295 XXXX 1745637558295, Thread 70284: XXXX 1745637558295, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558295 XXXX 1745637558295, Thread 70284: XXXX 1745637558295, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558396 XXXX 1745637558396, Thread 70284: XXXX 1745637558396, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558397 XXXX 1745637558397, Thread 70284: XXXX 1745637558397, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558498 XXXX 1745637558498, Thread 70284: XXXX 1745637558498, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558498 XXXX 1745637558498, Thread 70284: XXXX 1745637558498, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558598 XXXX 1745637558598, Thread 70284: XXXX 1745637558598, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558598 XXXX 1745637558598, Thread 70284: XXXX 1745637558598, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558698 XXXX 1745637558698, Thread 70284: XXXX 1745637558698, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558699 XXXX 1745637558699, Thread 70284: XXXX 1745637558699, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558798 XXXX 1745637558798, Thread 70284: XXXX 1745637558798, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558799 XXXX 1745637558799, Thread 70284: XXXX 1745637558799, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637558899 XXXX 1745637558899, Thread 70284: XXXX 1745637558899, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637558901 XXXX 1745637558901, Thread 70284: XXXX 1745637558901, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559001 XXXX 1745637559001, Thread 70284: XXXX 1745637559001, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559002 XXXX 1745637559002, Thread 70284: XXXX 1745637559002, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559101 XXXX 1745637559101, Thread 70284: XXXX 1745637559101, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559102 XXXX 1745637559102, Thread 70284: XXXX 1745637559102, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559202 XXXX 1745637559202, Thread 70284: XXXX 1745637559202, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559203 XXXX 1745637559203, Thread 70284: XXXX 1745637559203, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559302 XXXX 1745637559302, Thread 70284: XXXX 1745637559302, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559305 XXXX 1745637559305, Thread 70284: XXXX 1745637559305, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559402 XXXX 1745637559402, Thread 70284: XXXX 1745637559402, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559403 XXXX 1745637559403, Thread 70284: XXXX 1745637559403, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559504 XXXX 1745637559504, Thread 70284: XXXX 1745637559504, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559506 XXXX 1745637559506, Thread 70284: XXXX 1745637559506, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559604 XXXX 1745637559604, Thread 70284: XXXX 1745637559604, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559605 XXXX 1745637559605, Thread 70284: XXXX 1745637559605, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559705 XXXX 1745637559705, Thread 70284: XXXX 1745637559705, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559706 XXXX 1745637559706, Thread 70284: XXXX 1745637559706, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559805 XXXX 1745637559805, Thread 70284: XXXX 1745637559805, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559806 XXXX 1745637559806, Thread 70284: XXXX 1745637559806, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637559905 XXXX 1745637559905, Thread 70284: XXXX 1745637559905, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637559907 XXXX 1745637559907, Thread 70284: XXXX 1745637559907, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560006 XXXX 1745637560006, Thread 70284: XXXX 1745637560006, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560007 XXXX 1745637560007, Thread 70284: XXXX 1745637560007, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560106 XXXX 1745637560106, Thread 70284: XXXX 1745637560106, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560107 XXXX 1745637560107, Thread 70284: XXXX 1745637560107, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560207 XXXX 1745637560207, Thread 70284: XXXX 1745637560207, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560208 XXXX 1745637560208, Thread 70284: XXXX 1745637560208, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560308 XXXX 1745637560308, Thread 70284: XXXX 1745637560308, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560310 XXXX 1745637560310, Thread 70284: XXXX 1745637560310, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560409 XXXX 1745637560409, Thread 70284: XXXX 1745637560409, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560410 XXXX 1745637560410, Thread 70284: XXXX 1745637560410, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560510 XXXX 1745637560510, Thread 70284: XXXX 1745637560510, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560511 XXXX 1745637560511, Thread 70284: XXXX 1745637560511, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560611 XXXX 1745637560611, Thread 70284: XXXX 1745637560611, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560612 XXXX 1745637560612, Thread 70284: XXXX 1745637560612, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560711 XXXX 1745637560711, Thread 70284: XXXX 1745637560711, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560712 XXXX 1745637560712, Thread 70284: XXXX 1745637560712, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560812 XXXX 1745637560812, Thread 70284: XXXX 1745637560812, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560814 XXXX 1745637560814, Thread 70284: XXXX 1745637560814, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637560914 XXXX 1745637560914, Thread 70284: XXXX 1745637560914, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637560916 XXXX 1745637560916, Thread 70284: XXXX 1745637560916, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561014 XXXX 1745637561014, Thread 70284: XXXX 1745637561014, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561015 XXXX 1745637561015, Thread 70284: XXXX 1745637561015, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561116 XXXX 1745637561116, Thread 70284: XXXX 1745637561116, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561116 XXXX 1745637561116, Thread 70284: XXXX 1745637561116, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561217 XXXX 1745637561217, Thread 70284: XXXX 1745637561217, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561218 XXXX 1745637561218, Thread 70284: XXXX 1745637561218, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561319 XXXX 1745637561319, Thread 70284: XXXX 1745637561319, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561319 XXXX 1745637561319, Thread 70284: XXXX 1745637561319, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561418 XXXX 1745637561418, Thread 70284: XXXX 1745637561418, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561419 XXXX 1745637561419, Thread 70284: XXXX 1745637561419, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561521 XXXX 1745637561521, Thread 70284: XXXX 1745637561521, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561522 XXXX 1745637561522, Thread 70284: XXXX 1745637561522, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561621 XXXX 1745637561621, Thread 70284: XXXX 1745637561621, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561622 XXXX 1745637561622, Thread 70284: XXXX 1745637561622, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561721 XXXX 1745637561721, Thread 70284: XXXX 1745637561721, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561723 XXXX 1745637561723, Thread 70284: XXXX 1745637561723, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561822 XXXX 1745637561822, Thread 70284: XXXX 1745637561822, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561824 XXXX 1745637561824, Thread 70284: XXXX 1745637561824, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637561922 XXXX 1745637561922, Thread 70284: XXXX 1745637561922, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637561922 XXXX 1745637561922, Thread 70284: XXXX 1745637561922, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562023 XXXX 1745637562023, Thread 70284: XXXX 1745637562023, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562024 XXXX 1745637562024, Thread 70284: XXXX 1745637562024, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562124 XXXX 1745637562124, Thread 70284: XXXX 1745637562124, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562125 XXXX 1745637562125, Thread 70284: XXXX 1745637562125, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562224 XXXX 1745637562224, Thread 70284: XXXX 1745637562224, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562226 XXXX 1745637562226, Thread 70284: XXXX 1745637562226, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562326 XXXX 1745637562326, Thread 70284: XXXX 1745637562326, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562327 XXXX 1745637562327, Thread 70284: XXXX 1745637562327, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562425 XXXX 1745637562425, Thread 70284: XXXX 1745637562425, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562427 XXXX 1745637562427, Thread 70284: XXXX 1745637562427, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562526 XXXX 1745637562526, Thread 70284: XXXX 1745637562526, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562527 XXXX 1745637562527, Thread 70284: XXXX 1745637562527, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562626 XXXX 1745637562626, Thread 70284: XXXX 1745637562626, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562627 XXXX 1745637562627, Thread 70284: XXXX 1745637562627, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562727 XXXX 1745637562727, Thread 70284: XXXX 1745637562727, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562728 XXXX 1745637562728, Thread 70284: XXXX 1745637562728, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562828 XXXX 1745637562828, Thread 70284: XXXX 1745637562828, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562830 XXXX 1745637562830, Thread 70284: XXXX 1745637562830, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637562928 XXXX 1745637562928, Thread 70284: XXXX 1745637562928, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637562930 XXXX 1745637562930, Thread 70284: XXXX 1745637562930, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563029 XXXX 1745637563029, Thread 70284: XXXX 1745637563029, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563030 XXXX 1745637563030, Thread 70284: XXXX 1745637563030, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563131 XXXX 1745637563131, Thread 70284: XXXX 1745637563131, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563132 XXXX 1745637563132, Thread 70284: XXXX 1745637563132, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563232 XXXX 1745637563232, Thread 70284: XXXX 1745637563232, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563234 XXXX 1745637563234, Thread 70284: XXXX 1745637563234, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563332 XXXX 1745637563332, Thread 70284: XXXX 1745637563332, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563332 XXXX 1745637563332, Thread 70284: XXXX 1745637563332, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563433 XXXX 1745637563433, Thread 70284: XXXX 1745637563433, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563434 XXXX 1745637563434, Thread 70284: XXXX 1745637563434, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563536 XXXX 1745637563536, Thread 70284: XXXX 1745637563536, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563538 XXXX 1745637563538, Thread 70284: XXXX 1745637563538, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563635 XXXX 1745637563635, Thread 70284: XXXX 1745637563635, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563637 XXXX 1745637563637, Thread 70284: XXXX 1745637563637, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563736 XXXX 1745637563736, Thread 70284: XXXX 1745637563736, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563737 XXXX 1745637563737, Thread 70284: XXXX 1745637563737, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563838 XXXX 1745637563838, Thread 70284: XXXX 1745637563838, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563838 XXXX 1745637563838, Thread 70284: XXXX 1745637563838, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637563938 XXXX 1745637563938, Thread 70284: XXXX 1745637563938, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637563940 XXXX 1745637563940, Thread 70284: XXXX 1745637563940, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564040 XXXX 1745637564039, Thread 70284: XXXX 1745637564039, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564041 XXXX 1745637564041, Thread 70284: XXXX 1745637564041, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564140 XXXX 1745637564140, Thread 70284: XXXX 1745637564140, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564142 XXXX 1745637564142, Thread 70284: XXXX 1745637564142, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564240 XXXX 1745637564240, Thread 70284: XXXX 1745637564240, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564242 XXXX 1745637564242, Thread 70284: XXXX 1745637564242, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564341 XXXX 1745637564341, Thread 70284: XXXX 1745637564341, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564343 XXXX 1745637564343, Thread 70284: XXXX 1745637564343, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564442 XXXX 1745637564442, Thread 70284: XXXX 1745637564442, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564444 XXXX 1745637564444, Thread 70284: XXXX 1745637564444, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564543 XXXX 1745637564543, Thread 70284: XXXX 1745637564543, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564544 XXXX 1745637564544, Thread 70284: XXXX 1745637564544, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564643 XXXX 1745637564643, Thread 70284: XXXX 1745637564643, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564644 XXXX 1745637564644, Thread 70284: XXXX 1745637564644, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564744 XXXX 1745637564744, Thread 70284: XXXX 1745637564744, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564745 XXXX 1745637564745, Thread 70284: XXXX 1745637564745, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564844 XXXX 1745637564844, Thread 70284: XXXX 1745637564844, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564845 XXXX 1745637564845, Thread 70284: XXXX 1745637564845, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637564945 XXXX 1745637564945, Thread 70284: XXXX 1745637564945, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637564946 XXXX 1745637564946, Thread 70284: XXXX 1745637564946, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565046 XXXX 1745637565046, Thread 70284: XXXX 1745637565046, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565046 XXXX 1745637565046, Thread 70284: XXXX 1745637565046, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565146 XXXX 1745637565146, Thread 70284: XXXX 1745637565146, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565147 XXXX 1745637565147, Thread 70284: XXXX 1745637565147, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565247 XXXX 1745637565247, Thread 70284: XXXX 1745637565247, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565248 XXXX 1745637565248, Thread 70284: XXXX 1745637565248, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565347 XXXX 1745637565347, Thread 70284: XXXX 1745637565347, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565348 XXXX 1745637565348, Thread 70284: XXXX 1745637565348, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565447 XXXX 1745637565447, Thread 70284: XXXX 1745637565447, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565450 XXXX 1745637565450, Thread 70284: XXXX 1745637565450, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565547 XXXX 1745637565547, Thread 70284: XXXX 1745637565547, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565548 XXXX 1745637565548, Thread 70284: XXXX 1745637565548, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565648 XXXX 1745637565648, Thread 70284: XXXX 1745637565648, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565649 XXXX 1745637565649, Thread 70284: XXXX 1745637565649, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565750 XXXX 1745637565750, Thread 70284: XXXX 1745637565750, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565751 XXXX 1745637565751, Thread 70284: XXXX 1745637565751, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565850 XXXX 1745637565850, Thread 70284: XXXX 1745637565850, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565851 XXXX 1745637565851, Thread 70284: XXXX 1745637565851, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637565951 XXXX 1745637565951, Thread 70284: XXXX 1745637565951, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637565952 XXXX 1745637565952, Thread 70284: XXXX 1745637565952, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566052 XXXX 1745637566052, Thread 70284: XXXX 1745637566052, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566054 XXXX 1745637566054, Thread 70284: XXXX 1745637566054, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566153 XXXX 1745637566153, Thread 70284: XXXX 1745637566153, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566154 XXXX 1745637566154, Thread 70284: XXXX 1745637566154, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566254 XXXX 1745637566254, Thread 70284: XXXX 1745637566254, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566255 XXXX 1745637566255, Thread 70284: XXXX 1745637566255, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566355 XXXX 1745637566355, Thread 70284: XXXX 1745637566355, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566357 XXXX 1745637566357, Thread 70284: XXXX 1745637566357, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566456 XXXX 1745637566456, Thread 70284: XXXX 1745637566456, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566458 XXXX 1745637566458, Thread 70284: XXXX 1745637566458, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566558 XXXX 1745637566558, Thread 70284: XXXX 1745637566558, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566559 XXXX 1745637566559, Thread 70284: XXXX 1745637566559, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566659 XXXX 1745637566659, Thread 70284: XXXX 1745637566659, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566660 XXXX 1745637566660, Thread 70284: XXXX 1745637566660, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566759 XXXX 1745637566759, Thread 70284: XXXX 1745637566759, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566760 XXXX 1745637566760, Thread 70284: XXXX 1745637566760, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566861 XXXX 1745637566861, Thread 70284: XXXX 1745637566861, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566862 XXXX 1745637566862, Thread 70284: XXXX 1745637566862, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637566962 XXXX 1745637566962, Thread 70284: XXXX 1745637566962, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637566964 XXXX 1745637566964, Thread 70284: XXXX 1745637566964, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567063 XXXX 1745637567063, Thread 70284: XXXX 1745637567063, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567065 XXXX 1745637567065, Thread 70284: XXXX 1745637567065, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567165 XXXX 1745637567165, Thread 70284: XXXX 1745637567165, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567166 XXXX 1745637567166, Thread 70284: XXXX 1745637567166, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567264 XXXX 1745637567264, Thread 70284: XXXX 1745637567264, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567265 XXXX 1745637567265, Thread 70284: XXXX 1745637567265, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567365 XXXX 1745637567365, Thread 70284: XXXX 1745637567365, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567367 XXXX 1745637567367, Thread 70284: XXXX 1745637567367, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567465 XXXX 1745637567465, Thread 70284: XXXX 1745637567465, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567467 XXXX 1745637567467, Thread 70284: XXXX 1745637567467, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567566 XXXX 1745637567566, Thread 70284: XXXX 1745637567566, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567568 XXXX 1745637567568, Thread 70284: XXXX 1745637567568, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567667 XXXX 1745637567667, Thread 70284: XXXX 1745637567667, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567668 XXXX 1745637567668, Thread 70284: XXXX 1745637567668, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567767 XXXX 1745637567767, Thread 70284: XXXX 1745637567767, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567768 XXXX 1745637567768, Thread 70284: XXXX 1745637567768, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567868 XXXX 1745637567868, Thread 70284: XXXX 1745637567868, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567869 XXXX 1745637567869, Thread 70284: XXXX 1745637567869, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637567967 XXXX 1745637567967, Thread 70284: XXXX 1745637567967, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637567969 XXXX 1745637567969, Thread 70284: XXXX 1745637567969, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568068 XXXX 1745637568068, Thread 70284: XXXX 1745637568068, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568069 XXXX 1745637568069, Thread 70284: XXXX 1745637568069, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568169 XXXX 1745637568169, Thread 70284: XXXX 1745637568169, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568170 XXXX 1745637568170, Thread 70284: XXXX 1745637568170, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568270 XXXX 1745637568270, Thread 70284: XXXX 1745637568270, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568271 XXXX 1745637568271, Thread 70284: XXXX 1745637568271, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568370 XXXX 1745637568370, Thread 70284: XXXX 1745637568370, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568371 XXXX 1745637568371, Thread 70284: XXXX 1745637568371, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568470 XXXX 1745637568470, Thread 70284: XXXX 1745637568470, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568473 XXXX 1745637568473, Thread 70284: XXXX 1745637568473, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568571 XXXX 1745637568571, Thread 70284: XXXX 1745637568571, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568572 XXXX 1745637568572, Thread 70284: XXXX 1745637568572, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568674 XXXX 1745637568674, Thread 70284: XXXX 1745637568674, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568675 XXXX 1745637568675, Thread 70284: XXXX 1745637568675, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568773 XXXX 1745637568773, Thread 70284: XXXX 1745637568773, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568774 XXXX 1745637568774, Thread 70284: XXXX 1745637568774, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568874 XXXX 1745637568874, Thread 70284: XXXX 1745637568874, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568875 XXXX 1745637568875, Thread 70284: XXXX 1745637568875, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637568975 XXXX 1745637568975, Thread 70284: XXXX 1745637568975, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637568976 XXXX 1745637568976, Thread 70284: XXXX 1745637568976, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569076 XXXX 1745637569076, Thread 70284: XXXX 1745637569076, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569077 XXXX 1745637569077, Thread 70284: XXXX 1745637569077, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569178 XXXX 1745637569178, Thread 70284: XXXX 1745637569178, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569179 XXXX 1745637569179, Thread 70284: XXXX 1745637569179, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569279 XXXX 1745637569279, Thread 70284: XXXX 1745637569279, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569280 XXXX 1745637569280, Thread 70284: XXXX 1745637569280, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569379 XXXX 1745637569379, Thread 70284: XXXX 1745637569379, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569381 XXXX 1745637569381, Thread 70284: XXXX 1745637569381, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569479 XXXX 1745637569479, Thread 70284: XXXX 1745637569479, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569481 XXXX 1745637569481, Thread 70284: XXXX 1745637569481, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569579 XXXX 1745637569579, Thread 70284: XXXX 1745637569579, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569580 XXXX 1745637569580, Thread 70284: XXXX 1745637569580, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569681 XXXX 1745637569681, Thread 70284: XXXX 1745637569681, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569682 XXXX 1745637569682, Thread 70284: XXXX 1745637569682, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569780 XXXX 1745637569780, Thread 70284: XXXX 1745637569780, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569781 XXXX 1745637569781, Thread 70284: XXXX 1745637569781, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569882 XXXX 1745637569882, Thread 70284: XXXX 1745637569882, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569883 XXXX 1745637569883, Thread 70284: XXXX 1745637569883, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637569981 XXXX 1745637569981, Thread 70284: XXXX 1745637569981, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637569983 XXXX 1745637569983, Thread 70284: XXXX 1745637569983, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570082 XXXX 1745637570082, Thread 70284: XXXX 1745637570082, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570083 XXXX 1745637570083, Thread 70284: XXXX 1745637570083, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570183 XXXX 1745637570183, Thread 70284: XXXX 1745637570183, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570185 XXXX 1745637570185, Thread 70284: XXXX 1745637570185, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570282 XXXX 1745637570282, Thread 70284: XXXX 1745637570282, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570284 XXXX 1745637570284, Thread 70284: XXXX 1745637570284, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570383 XXXX 1745637570383, Thread 70284: XXXX 1745637570383, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570385 XXXX 1745637570385, Thread 70284: XXXX 1745637570385, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570484 XXXX 1745637570484, Thread 70284: XXXX 1745637570484, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570485 XXXX 1745637570485, Thread 70284: XXXX 1745637570485, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570584 XXXX 1745637570584, Thread 70284: XXXX 1745637570584, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570584 XXXX 1745637570584, Thread 70284: XXXX 1745637570584, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570685 XXXX 1745637570685, Thread 70284: XXXX 1745637570685, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570687 XXXX 1745637570687, Thread 70284: XXXX 1745637570687, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570786 XXXX 1745637570786, Thread 70284: XXXX 1745637570786, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570787 XXXX 1745637570787, Thread 70284: XXXX 1745637570787, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570886 XXXX 1745637570886, Thread 70284: XXXX 1745637570886, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570888 XXXX 1745637570888, Thread 70284: XXXX 1745637570888, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637570986 XXXX 1745637570986, Thread 70284: XXXX 1745637570986, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637570986 XXXX 1745637570986, Thread 70284: XXXX 1745637570986, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571088 XXXX 1745637571087, Thread 70284: XXXX 1745637571087, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571088 XXXX 1745637571088, Thread 70284: XXXX 1745637571088, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571187 XXXX 1745637571187, Thread 70284: XXXX 1745637571187, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571188 XXXX 1745637571188, Thread 70284: XXXX 1745637571188, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571287 XXXX 1745637571287, Thread 70284: XXXX 1745637571287, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571288 XXXX 1745637571288, Thread 70284: XXXX 1745637571288, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571387 XXXX 1745637571387, Thread 70284: XXXX 1745637571387, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571389 XXXX 1745637571389, Thread 70284: XXXX 1745637571389, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571488 XXXX 1745637571488, Thread 70284: XXXX 1745637571488, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571489 XXXX 1745637571489, Thread 70284: XXXX 1745637571489, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571589 XXXX 1745637571589, Thread 70284: XXXX 1745637571589, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571591 XXXX 1745637571591, Thread 70284: XXXX 1745637571591, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571689 XXXX 1745637571689, Thread 70284: XXXX 1745637571689, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571691 XXXX 1745637571691, Thread 70284: XXXX 1745637571691, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571790 XXXX 1745637571790, Thread 70284: XXXX 1745637571790, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571791 XXXX 1745637571791, Thread 70284: XXXX 1745637571791, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571891 XXXX 1745637571891, Thread 70284: XXXX 1745637571891, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571892 XXXX 1745637571892, Thread 70284: XXXX 1745637571892, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637571991 XXXX 1745637571991, Thread 70284: XXXX 1745637571991, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637571993 XXXX 1745637571993, Thread 70284: XXXX 1745637571993, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572091 XXXX 1745637572091, Thread 70284: XXXX 1745637572091, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572091 XXXX 1745637572091, Thread 70284: XXXX 1745637572091, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572192 XXXX 1745637572192, Thread 70284: XXXX 1745637572192, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572193 XXXX 1745637572193, Thread 70284: XXXX 1745637572193, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572294 XXXX 1745637572294, Thread 70284: XXXX 1745637572294, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572295 XXXX 1745637572295, Thread 70284: XXXX 1745637572295, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572395 XXXX 1745637572395, Thread 70284: XXXX 1745637572395, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572396 XXXX 1745637572396, Thread 70284: XXXX 1745637572396, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572496 XXXX 1745637572496, Thread 70284: XXXX 1745637572496, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572497 XXXX 1745637572497, Thread 70284: XXXX 1745637572497, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572596 XXXX 1745637572596, Thread 70284: XXXX 1745637572596, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572597 XXXX 1745637572597, Thread 70284: XXXX 1745637572597, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572696 XXXX 1745637572696, Thread 70284: XXXX 1745637572696, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572698 XXXX 1745637572698, Thread 70284: XXXX 1745637572698, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572796 XXXX 1745637572796, Thread 70284: XXXX 1745637572796, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572798 XXXX 1745637572798, Thread 70284: XXXX 1745637572798, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572896 XXXX 1745637572896, Thread 70284: XXXX 1745637572896, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572898 XXXX 1745637572898, Thread 70284: XXXX 1745637572898, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637572996 XXXX 1745637572996, Thread 70284: XXXX 1745637572996, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637572998 XXXX 1745637572998, Thread 70284: XXXX 1745637572998, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573096 XXXX 1745637573096, Thread 70284: XXXX 1745637573096, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573097 XXXX 1745637573097, Thread 70284: XXXX 1745637573097, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573197 XXXX 1745637573197, Thread 70284: XXXX 1745637573197, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573197 XXXX 1745637573197, Thread 70284: XXXX 1745637573197, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573298 XXXX 1745637573298, Thread 70284: XXXX 1745637573298, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573299 XXXX 1745637573299, Thread 70284: XXXX 1745637573299, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573398 XXXX 1745637573398, Thread 70284: XXXX 1745637573398, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573399 XXXX 1745637573399, Thread 70284: XXXX 1745637573399, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573499 XXXX 1745637573499, Thread 70284: XXXX 1745637573499, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573500 XXXX 1745637573500, Thread 70284: XXXX 1745637573500, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573600 XXXX 1745637573600, Thread 70284: XXXX 1745637573600, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573601 XXXX 1745637573601, Thread 70284: XXXX 1745637573601, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573700 XXXX 1745637573700, Thread 70284: XXXX 1745637573700, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573702 XXXX 1745637573702, Thread 70284: XXXX 1745637573702, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573801 XXXX 1745637573801, Thread 70284: XXXX 1745637573801, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573802 XXXX 1745637573802, Thread 70284: XXXX 1745637573802, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637573903 XXXX 1745637573903, Thread 70284: XXXX 1745637573903, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637573904 XXXX 1745637573904, Thread 70284: XXXX 1745637573904, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637574003 XXXX 1745637574003, Thread 70284: XXXX 1745637574003, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637574005 XXXX 1745637574005, Thread 70284: XXXX 1745637574005, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637574105 XXXX 1745637574105, Thread 70284: XXXX 1745637574105, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637574106 XXXX 1745637574106, Thread 70284: XXXX 1745637574106, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637574206 XXXX 1745637574206, Thread 70284: XXXX 1745637574206, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637574207 XXXX 1745637574207, Thread 70284: XXXX 1745637574207, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637574307 XXXX 1745637574307, Thread 70284: XXXX 1745637574307, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637574308 XXXX 1745637574308, Thread 70284: XXXX 1745637574308, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637574408 XXXX 1745637574408, Thread 70284: XXXX 1745637574408, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637574409 XXXX 1745637574409, Thread 70284: XXXX 1745637574409, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745637574509 XXXX 1745637574509, Thread 70284: XXXX 1745637574509, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745637574510 XXXX 1745637574510, Thread 70284: XXXX 1745637574510, Exiting Thread 70284: Commands::runScriptBasic  
+70284 1745638165001 XXXX 1745638165001, Thread 70284: XXXX 1745638165001, Entering Thread 70284: Commands::runScriptBasic, script name = GetHaltStatus, timeOut = -1 ms  
+70284 1745638165003 XXXX 1745638165003, Thread 70284: com.Send returned false 
+70284 1745638165003 XXXX 1745638165003, Thread 70284: transfer: exception after writeHeaderAndGetResult null 
+70284 1745638165003 XXXX 1745638165003, Thread 70284: XXXX 1745638165003, Entering Thread 70284: ToolCommUsb::recoverFromProtocolError, type = NO_SCRIPT  
+70284 1745638165003 XXXX 1745638165003, Thread 70284: Send Abort Script Engine Command 
+70284 1745638165003 XXXX 1745638165003, Thread 70284: XXXX 1745638165003, Entering Thread 70284: ToolCommUsb::killScriptEngine  
+70284 1745638165004 XXXX 1745638165004, Thread 70284: com.Send returned false 
+70284 1745638165004 XXXX 1745638165004, Thread 70284: Failed sending Abort Script Engine Command. Set nuclear option = true 
+70284 1745638165004 XXXX 1745638165004, Thread 70284: About to nuke 
+70284 1745638165004 XXXX 1745638165004, Thread 70284: XXXX 1745638165004, Entering Thread 70284: ToolCommUsb::nuclearOption  
+70284 1745638165004 XXXX 1745638165004, Thread 70284: com.Send returned false 

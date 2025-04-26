@@ -12,14 +12,14 @@
 #include "stdio.h"
 
 
-Transmission* queue[MAX_QUEUE_SIZE];
-int queue_size = 0;
-int nextOpenIndex = 0;
-int lastDequeuedIndex = -1;
+volatile uint8_t queue[MAX_QUEUE_SIZE];
+volatile uint8_t queue_size = 0;
+volatile uint8_t nextOpenIndex = 0;
+volatile uint8_t lastDequeuedIndex = MAX_QUEUE_SIZE - 1;
 
 // Add an element to the queue
 // returns 1 if the element was added successfully
-int enqueue(Transmission* element) {
+uint8_t enqueue(uint8_t element) {
     if (queue_size == MAX_QUEUE_SIZE) {
         // full
         return 0;
@@ -35,10 +35,10 @@ int enqueue(Transmission* element) {
 
 
 // removes the next element from the queue
-Transmission* dequeue() {
+uint8_t dequeue() {
     if (queue_size == 0) {
         // empty
-        return NULL;
+        return 255;
     }
     // increment the lastDequeuedIndex
     lastDequeuedIndex = (lastDequeuedIndex + 1) % MAX_QUEUE_SIZE;
@@ -46,16 +46,16 @@ Transmission* dequeue() {
     return queue[lastDequeuedIndex];
 }
 
-Transmission* peek() {
+uint8_t peek() {
     if (queue_size == 0) {
         // empty
-        return NULL;
+        return 255;
     }
     int peekIndex = (lastDequeuedIndex + 1) % MAX_QUEUE_SIZE;
     return queue[peekIndex];
 }
 
-int getQueueSize() {
+uint8_t getQueueSize() {
     return queue_size;
 }
 

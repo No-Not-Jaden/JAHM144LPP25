@@ -14,16 +14,6 @@ extern "C" {
     
     #define ROWS 9
     #define COLS 16
-    
-    typedef struct {
-        uint8_t brightness;     // brightness of the LED
-        float vx, vy;           // velocity of the LED
-        float rx, ry;           // raw relative position
-        uint8_t moved;
-    } LED;
-    
-    extern LED leds[ROWS][COLS]; //array for 144 LED pixels
-                 //2D array struct [rows][columns] -> [y position][x position]
 
     /* Initialize the pixel data with some pixels lit.
      * 
@@ -97,6 +87,12 @@ extern "C" {
     void setMoved(uint8_t x, uint8_t y, uint8_t moved);
     
     void clearMoved();
+    
+    uint8_t getData(uint8_t x, uint8_t y);
+    
+    void setData(uint8_t x, uint8_t y, uint8_t data);
+    
+    uint8_t getDisplayBrightness(uint8_t x, uint8_t y);
 
 
 #ifdef	__cplusplus

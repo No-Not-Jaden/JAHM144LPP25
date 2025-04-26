@@ -129,9 +129,9 @@ void led_write(uint8_t row, uint8_t column, uint8_t brightness){
        //start with the brightness
     data[0] = 0x24;
     i = 1;
-    for(j = 0; j < 9; j++){
-        for(k = 0; k<16; k++){
-            data[i++] = leds[j][k].brightness;
+    for(j = 0; j < ROWS; j++){
+        for(k = 0; k< COLS; k++){
+            data[i++] = getDisplayBrightness(k, j);
         }
     }
      transmit_packet(SLAVE_ADDRESS, data, 145);

@@ -32,6 +32,8 @@
                                        // Fail-Safe Clock Monitor is enabled)
 #pragma config FNOSC = FRCPLL      // Oscillator Select (Fast RC Oscillator with PLL module (FRCPLL))
 
+#define ACCEL_MULTIPLIER 1.5
+
 GravityVector vector;
 void normalize(GravityVector* vector);
 
@@ -62,15 +64,15 @@ int main(void) {
     
     while (1) {
         // get the gravity vector
-        getGravityVector(&vector);
+        getAccVector(&vector);
         
         if (vector.average_count > 0) {
             // normalize it
-            normalize(&vector);
+            //normalize(&vector);
             
             // apply acceleration
-            float ax = vector.x * 9.8f;
-            float ay = vector.y * 9.8f;
+            float ax = vector.x * ACCEL_MULTIPLIER;
+            float ay = vector.y * ACCEL_MULTIPLIER;
             for (uint8_t row = 0; row < ROWS; row++) {
                 for (uint8_t col = 0; col < COLS; col++) {
                     applyAcceleration(col, row, ay, ax, vector.deltaTime);
@@ -80,20 +82,13 @@ int main(void) {
             write_all();
             clearMoved();
         }
-        displayGravityVector();
         // delay for next update
-        delay(200);
+        delay(10);
+        displayGravityVector();
+        delay(10);
         
     }
     return 0;
-}
-
-// Normalizes the gravity vector
-void normalize(GravityVector* vector) {
-    float magnitude = sqrt(vector->x * vector->x + vector->y * vector->y + vector->z * vector->z);
-    vector->x = vector->x / magnitude;
-    vector->y = vector->y / magnitude;
-    vector->z = vector->z / magnitude;
 }
 
 void displayGravityVector() {
@@ -107,8 +102,8 @@ void displayGravityVector() {
         lcd_write_string(&str);
         lcd_set_cursor(1,0);
         char str2[20];
-        sprintf(str2, "%2.1f %d", vector.z, getTransmissionsUsed());
+        sprintf(str2, "%2.1f %d", vector.z, vector.average_count);
         lcd_write_string(&str2);
-        delay(100);
+        
     }
 }

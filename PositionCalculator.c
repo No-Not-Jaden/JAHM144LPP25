@@ -11,7 +11,7 @@
 
 #define LED_ON 10
 #define LED_OFF 0
-
+#define WATER_EFFECT 1
 
     
     /* Check if a position is open relative to another. AKA checking if the
@@ -23,7 +23,11 @@
      * @param dy    The change in y position. (Should be -1, 0, or 1)
      */
     uint8_t isOpen(uint8_t x, uint8_t y, int8_t dx, int8_t dy){
-        if (getBrightness(x + dx, y + dy) > LED_ON){
+        if ((int) x + dx < 0 || (int) x + dx >= COLS || (int) y + dy < 0 || (int) y + dy >= ROWS) {
+            // index out of bounds
+            return 0;
+        }
+        if (getBrightness(x + dx, y + dy) >= LED_ON){
             return 0;
         } else {
             return 1;
@@ -47,10 +51,12 @@
         float OrignalBright = getBrightness(xFrom, yFrom);
         
         setRawRelativePosition(xTo, yTo, OrignalX - (xTo - xFrom), OrignalY - (yTo - yFrom));
+        setData(xTo, yTo, getData(xFrom, yFrom));
         setMoved(xTo, yTo, 1);
         setVelocity(xTo, yTo, OrignalVelX, OrignalVelY);
         setBrightness(xTo, yTo, OrignalBright);
        
+        setData(xFrom, yFrom, 0);
         setRawRelativePosition(xFrom, yFrom, 0, 0);
         setVelocity(xFrom, yFrom, 0.0, 0.0);
         setBrightness(xFrom, yFrom, LED_OFF);
@@ -83,10 +89,18 @@
         
         if (isOpen(x, y, 0, 0) == 0 && (dx != 0 || dy != 0)) {
             // pixel present
-            if (isOpen(x, y, dx, 0) == 1) {
+            if (isOpen(x, y, dx, 0)) {
                 movePixel(x, y, x + dx, y);
-            } else if (isOpen(x, y, 0, dy) == 1) {
+            } else if (isOpen(x, y, 0, dy)) {
                 movePixel(x, y, x, y + dy);
+            } else if (WATER_EFFECT && dx != 0 && isOpen(x, y, dx, 1) && getVelocityY(x, y) > 0) {
+                movePixel(x, y, x + dx, y + 1);
+            } else if (WATER_EFFECT && dx != 0 && isOpen(x, y, dx, -1) && getVelocityY(x, y) < 0) {
+                movePixel(x, y, x + dx, y - 1);
+            } else if (WATER_EFFECT && dy != 0 && isOpen(x, y, 1, dy) && getVelocityX(x, y) > 0) {
+                movePixel(x, y, x + 1, y + dy);
+            } else if (WATER_EFFECT && dy != 0 && isOpen(x, y, -1, dy) && getVelocityX(x, y) < 0) {
+                movePixel(x, y, x - 1, y + dy);
             } else {
                 // cannot move, reset velocity
                 setVelocity(x, y, 0.0, 0.0);

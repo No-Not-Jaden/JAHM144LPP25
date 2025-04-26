@@ -12,6 +12,7 @@
 extern "C" {
 #endif
     
+    // Structure of the gravity vector
     typedef struct {
         float x;
         float y;
@@ -20,8 +21,16 @@ extern "C" {
         unsigned int average_count; // how many averages in this object
     } GravityVector;
 
-void bno085_init();
-void getGravityVector(GravityVector* out);
+    /* Initialize the bno085 and start receiving reports
+     */
+    void bno085_init();
+    /* Get the gravity vector from the device.
+     * 
+     * @param out   The gravity vector
+     */
+    void getGravityVector(GravityVector* out);
+    
+    void getAccVector(GravityVector* out);
 
 
 #ifdef	__cplusplus

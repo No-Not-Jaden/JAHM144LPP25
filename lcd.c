@@ -7,85 +7,90 @@
 
 
 #include "xc.h"
+
 #define DOGS104_ADDR    0x3C     // 7-bit I²C address
-#define LCD_CMD         0x00     // Control byte: command
-#define LCD_DATA        0x40     // Control byte: data
+#define LCD_CMD         0x00     // Control byte for commands
+#define LCD_DATA        0x40     // Control byte for data
 
-void lcd_cmd(uint8_t cmd) {
-    uint8_t packet[] = { LCD_CMD, cmd };
-    transmit_packet(DOGS104_ADDR << 1, packet, 2);
+void lcd_send_packet(const uint8_t* cmds, uint8_t length, uint8_t controlByte) {
+    uint8_t packet[length * 2];
+    for (uint8_t i = 0; i < length; i++) {
+        if (i < length - 1) {
+            packet[i * 2] = controlByte | 0b10000000; // Add continuation bit
+        } else {
+            packet[i * 2] = controlByte;
+        }
+        packet[i * 2 + 1] = cmds[i];
+    }
+    transmit_packet(DOGS104_ADDR << 1, packet, length * 2);
 }
 
-void lcd_clear() {
-    lcd_cmd(1);
-}
-
-void lcd_send_data(uint8_t data) {
-    uint8_t packet[] = { LCD_DATA, data };
-    transmit_packet(DOGS104_ADDR << 1, packet, 2);
-}
-
-// delays the processor for a certain number of milliseconds
 void delay(int delay_in_ms) {
     for (int i = 0; i < delay_in_ms; i++) {
         for (int j = 0; j < 1770; j++) {
-                asm("nop");
+            asm("nop");
         }
     }
 }
 
-// initialize I2C on PIC and run initialization sequence on the LCD
-void lcd_init() {
-    TRISBbits.TRISB6 = 0; // set reset pin as output
-
-    // reset LCD
-    // ~50 ms high
-    LATBbits.LATB6 = 1;
-    delay(50); 
-    // 0.2 ms low
-    LATBbits.LATB6 = 0;
-    delay(1);
-    // high
-    LATBbits.LATB6 = 1;
-    delay(100);
-    
-    // initialize LCD
-    lcd_cmd(0x3a); // 8 bit data length extension Bit RE=1; REV=0
-    lcd_cmd(0x09); // 4 line display
-    lcd_cmd(0x06); // bottom view
-    lcd_cmd(0x1e); // BS1=1
-    lcd_cmd(0x39); // 8 bit data length extension Bit RE=0; IS=1
-    lcd_cmd(0x1b); // BS0=1 -> Bias=1/6
-    lcd_cmd(0x6e); // Devider on and set value
-    lcd_cmd(0x56); // Booster on and set contrast (DB1=C5, DB0=C4)
-    lcd_cmd(0x7A); // Set contrast (DB3-DB0=C3-C0)
-    lcd_cmd(0x38); // 8 bit data length extension Bit RE=0; IS=0
-    lcd_cmd(0x0F); // Display on, cursor on, blink on
-    
-    /* Function set (RE=1 version) */
-    lcd_cmd(0x3a); /* DL, N, ~BE, enter extended mode RE=1, ~REV */ 
-    /* Extended function set (assumes RE=1) */
-    lcd_cmd(0x09); /* NW, ~FW, ~B/W */
-    /* Double-height/bias/dot-shift (assumes RE=1) */
-    lcd_cmd(0x1a); /* UD2, ~UD1, BS1, ~DH? */
-    /* Function set (RE=0 version, IS=0) */
-    lcd_cmd(0x3c); /* DL, N, DH, return to RE=0, ~IS */
-
-    lcd_cmd(1); // clear display
-    
+void lcd_clear() {
+    uint8_t cmds[] = { 0x01 }; // Clear display
+    lcd_send_packet(cmds, sizeof(cmds), LCD_CMD);
 }
 
-
 void lcd_set_cursor(uint8_t row, uint8_t col) {
-    lcd_cmd(0b10000000 | (0x20 * row + col));
+    uint8_t cmd = 0b10000000 | (0x20 * row + col);
+    lcd_send_packet(&cmd, 1, LCD_CMD);
 }
 
 void lcd_write_char(char c) {
-    lcd_send_data((uint8_t)c);
+    lcd_send_packet(c, 1, LCD_DATA);
 }
 
 void lcd_write_string(const char* str) {
-    while (*str) {
-        lcd_write_char(*str++);
+    uint8_t buffer[32];
+    uint8_t len = 0;
+
+    while (*str && len < 32) {
+        buffer[len] = (uint8_t)(*str++);
+        len++;
     }
+
+    lcd_send_packet(buffer, len, LCD_DATA);
+}
+
+void lcd_init() {
+    TRISBbits.TRISB6 = 0; // Reset pin as output
+
+    // Hardware reset
+    LATBbits.LATB6 = 1;
+    delay(50);
+    LATBbits.LATB6 = 0;
+    delay(1);
+    LATBbits.LATB6 = 1;
+    delay(100);
+
+    // Initialization sequence
+    const uint8_t init_sequence[] = {
+        0x3A, // 8-bit, extension set (RE=1)
+        0x09, // 4-line display
+        0x06, // Bottom view
+        0x1E, // Bias set BS1=1
+        0x39, // Extension set RE=0, IS=1
+        0x1B, // Bias 1/6
+        0x6E, // Divider ON
+        0x56, // Booster on and contrast (C5,C4)
+        0x7A, // Contrast (C3-C0)
+        0x38, // Return to normal RE=0 IS=0
+        0x0F,  // Display ON, cursor ON, blink ON
+        0x3A, // Extended Function Set
+        0x09, // 4-line display
+        0x1A, // Double height/bias adjustment
+        0x3C  // Return to standard mode
+    };
+    lcd_send_packet(init_sequence, sizeof(init_sequence), LCD_CMD);
+
+    delay(5); // Small delay
+
+    lcd_clear(); // Clear screen
 }
