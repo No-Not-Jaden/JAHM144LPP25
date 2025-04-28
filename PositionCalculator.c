@@ -28,6 +28,7 @@
             return 0;
         }
         if (getBrightness(x + dx, y + dy) >= LED_ON){
+            // check if LED is one to see if the space is open
             return 0;
         } else {
             return 1;
@@ -49,17 +50,20 @@
         float OrignalX = getRawRelativePositionX(xFrom, yFrom);
         float OrignalY = getRawRelativePositionY(xFrom, yFrom);
         float OrignalBright = getBrightness(xFrom, yFrom);
+        // get original values
         
         setRawRelativePosition(xTo, yTo, OrignalX - (xTo - xFrom), OrignalY - (yTo - yFrom));
         setData(xTo, yTo, getData(xFrom, yFrom));
         setMoved(xTo, yTo, 1);
         setVelocity(xTo, yTo, OrignalVelX, OrignalVelY);
         setBrightness(xTo, yTo, OrignalBright);
+        // set new postion to orginial value
        
         setData(xFrom, yFrom, 0);
         setRawRelativePosition(xFrom, yFrom, 0, 0);
         setVelocity(xFrom, yFrom, 0.0, 0.0);
         setBrightness(xFrom, yFrom, LED_OFF);
+        //reset orginial position 
         
     }
     
@@ -119,8 +123,10 @@
     int8_t signint(float d){
         if (d < -0.5){
             return -1;
+            //round to -1 to make one full movement in the array
         } else if (d > 0.5){
             return 1;
+            //round to 1 to make one full movement in the array
         }
         return 0;
     }
@@ -152,21 +158,26 @@
         float OrignalVelY = getVelocityY(x, y);
         float OrignalX = getRawRelativePositionX(x, y);
         float OrignalY = getRawRelativePositionY(x, y);
+        // get original values
         float timeChange = dt / 1000.0f; // convert dt to seconds
            
         
         float CurrentVelX = OrignalVelX + ax * timeChange;
         float CurrentVelY = OrignalVelY + ay * timeChange;
+        // calculate the new velocity with the original velocity plus the acceleration
         
         float dx = OrignalVelX * timeChange + 0.5 * ax * timeChange * timeChange;
         float dy = OrignalVelY * timeChange + 0.5 * ay * timeChange * timeChange;
+        // use physics equation to calcuate the change in x and y postion: dx = vx*dt + (1/2)*ax*dt^2
         
         float RawX = OrignalX + dx;
         float RawY = OrignalY + dy;
+        //update the RawRelativePosition with the change in postion
         
         setRawRelativePosition(x, y, RawX, RawY);
         setVelocity(x, y, CurrentVelX, CurrentVelY);
+        //set the pixels data to its new values
         
-        tryMovePixel(x, y, signint(RawX), signint(RawY));
+        tryMovePixel(x, y, signint(RawX), signint(RawY)); //try to move the pixel to the new postion dictated by its velocity and acceleration
     }
 
