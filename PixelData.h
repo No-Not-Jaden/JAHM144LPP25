@@ -82,16 +82,49 @@ extern "C" {
      */
     void setRawRelativePosition(uint8_t x, uint8_t y, float rx, float ry);
     
+    /* Check if a certain pixel has the moved attribute.
+     * 
+     * @param x     The x position of the pixel.
+     * @param y     The y position of the pixel.
+     * @returns     True if the pixel has the moved attribute.
+     */
     uint8_t isMoved(uint8_t x, uint8_t y);
     
+    /* Set a pixel's moved attribute.
+     * 
+     * @param x     The x position of the pixel.
+     * @param y     The y position of the pixel.
+     * @param moved The value to set the moved attribute to.
+     */
     void setMoved(uint8_t x, uint8_t y, uint8_t moved);
     
+    /* Clear the moved attribute on all pixels.
+     */
     void clearMoved();
     
+    /* Get the data for a pixel. This holds the pixel attributes.
+     * 
+     * @param x     The x position of the pixel.
+     * @param y     The y position of the pixel.
+     * @returns     The data of the pixel.
+     */
     uint8_t getData(uint8_t x, uint8_t y);
     
+    /* Set the data of the pixel.
+     * 
+     * @param x     The x position of the pixel.
+     * @param y     The y position of the pixel.
+     * @param data  The new data for the pixel.
+     */
     void setData(uint8_t x, uint8_t y, uint8_t data);
     
+    /* Get the brightness that should be displayed for this pixel.
+     * The regular brightness may be modified according to the pixel attributes.
+     * 
+     * @param x     The x position of the pixel.
+     * @param y     The y position of the pixel.
+     * @returns     The brightness of the pixel ready to be displayed.
+     */
     uint8_t getDisplayBrightness(uint8_t x, uint8_t y);
 
 

@@ -37,6 +37,15 @@
 GravityVector vector;
 void normalize(GravityVector* vector);
 
+// delay roughly an amount of time in milliseconds
+void delay(int delay_in_ms) {
+    for (int i = 0; i < delay_in_ms; i++) {
+        for (int j = 0; j < 1770; j++) {
+            asm("nop");
+        }
+    }
+}
+
 void setup() {
     CLKDIVbits.RCDIV = 0;
     
@@ -49,26 +58,28 @@ void setup() {
     delay(50);
     LATBbits.LATB15 = 1; // enable power to the device
     
+    TRISBbits.TRISB6 = 0;
+    
     init_i2c();
     bno085_init();
     delay(500);
     init_pixels(49);
-    lcd_init();
+    //lcd_init();
     led_init();
     write_all();
     delay(500);
+    
+    LATBbits.LATB6 = 1; // signal that setup is complete
 }
 
 int main(void) {
     setup();
     
     while (1) {
-        // get the gravity vector
+        // get the acceleration vector
         getAccVector(&vector);
         
         if (vector.average_count > 0) {
-            // normalize it
-            //normalize(&vector);
             
             // apply acceleration
             float ax = vector.x * ACCEL_MULTIPLIER;
@@ -84,13 +95,14 @@ int main(void) {
         }
         // delay for next update
         delay(10);
-        displayGravityVector();
+        //displayGravityVector();
         delay(10);
         
     }
     return 0;
 }
 
+// displays the vector variable on the LCD
 void displayGravityVector() {
     lcd_clear();
     lcd_set_cursor(0,0);
