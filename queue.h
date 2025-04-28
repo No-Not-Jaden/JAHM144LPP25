@@ -43,7 +43,7 @@ extern "C" {
      */
     uint8_t getQueueSize();
     
-    /*  Get the next tranmission from the queue without removing it.
+    /*  Get the next transmission from the queue without removing it.
      * 
      * @returns     The next transmission in the queue, or null if the queue is empty.
      */
