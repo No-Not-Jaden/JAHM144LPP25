@@ -1,6 +1,6 @@
 /* 
  * File:   PositionCalculator.h
- * Author: your mom
+ * Author: Christian
  *
  * Created on April 4, 2025, 9:18 AM
  */

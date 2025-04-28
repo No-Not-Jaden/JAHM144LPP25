@@ -1,6 +1,6 @@
 /* 
  * File:   PixelData.h
- * Author: diddy
+ * Author: Mishima
  *
  * Created on April 4, 2025, 9:40 AM
  */

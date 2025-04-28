@@ -1,3 +1,9 @@
+/* 
+ * File:   PixelData.h
+ * Author: Mishima
+ *
+ * Created on April 4, 2025, 9:40 AM
+ */
 
 #include "xc.h"
 #include "stdint.h"
